@@ -1,0 +1,28 @@
+Package sc;
+
+Helpers
+
+lettre = [['a' .. 'z'] + ['A' .. 'Z']];
+chiffre = ['0' .. '9'];
+alpha = [lettre + ['_' + '$']];
+alphanum = [lettre + chiffre];
+
+Tokens
+
+espaces = (' ' | 13 | 10)+;
+commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
+parenthese_ouvrante = '(';
+parenthese_fermante = ')';
+virgule = ',';
+nombre = chiffre+;
+identif = alpha alphanum*;
+
+Ignored Tokens
+
+espaces, commentaire;
+
+Productions
+
+programme =
+{prog1} parenthese_ouvrante identif virgule nombre parenthese_fermante |
+{prog2} parenthese_ouvrante nombre parenthese_fermante ;
