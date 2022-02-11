@@ -26,6 +26,8 @@ def isEvalFile(filename) :
 def compileCompiler() :
   global classpath
   for file in ["Compiler.java", "SaVM.java", "C3aVM.java", "NasmVM.java"] :
+    if not os.path.isfile(srcPath+file) :
+      continue
     print("Compiling %s..."%file, end="", file=outVerbose)
     proc = subprocess.Popen("cd %s && javac %s %s %s"%(srcPath, "-cp " if len(classpath) > 0 else "", classpath, file), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     errMess = proc.stderr.read().decode('utf8')
@@ -282,9 +284,10 @@ def printEvaluationResult(destination, evaluationResult, useColor) :
   score = 100.0*nbCorrect/nbTotal
   print("Évaluation de %s :"%name, file=destination)
   print("{}/{} correct ({:6.2f}%)".format(nbCorrect, nbTotal, score), file=destination)
-  printListElements(destination, correct, green, useColor, "CORRECT")
-  printListElements(destination, incorrect, purple, useColor, "INCORRECT")
-  printListElements(destination, notfound, red, useColor, "NON-EXISTANT")
+  if nbCorrect > 0 :
+    printListElements(destination, correct, green, useColor, "CORRECT")
+    printListElements(destination, incorrect, purple, useColor, "INCORRECT")
+    printListElements(destination, notfound, red, useColor, "NON-EXISTANT")
   return score
 ################################################################################
 
