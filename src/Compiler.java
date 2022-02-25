@@ -1,6 +1,11 @@
+import sa.Sa2Xml;
+import sa.SaNode;
 import sc.parser.*;
 import sc.lexer.*;
 import sc.node.*;
+import ts.Sa2ts;
+import ts.Ts;
+
 import java.io.*;
 //import sa.*;
 //import ts.*;
@@ -50,7 +55,7 @@ public class Compiler
 		tree.apply(new Sc2Xml(baseName));
 	    }
 	    
-	    /*	    System.out.println("[BUILD SA] ");
+	    System.out.println("[BUILD SA] ");
 	    Sc2sa sc2sa = new Sc2sa();
 	    tree.apply(sc2sa);
 	    SaNode saRoot = sc2sa.getRoot();
@@ -60,7 +65,7 @@ public class Compiler
 		new Sa2Xml(saRoot, baseName);
 	    }
 	    
-	    System.out.println("[BUILD TS] ");
+	    /*System.out.println("[BUILD TS] ");
 	    Ts tableGlobale = new Sa2ts(saRoot).getTableGlobale();
 
 	    if(verboseLevel > 1){
@@ -109,8 +114,9 @@ public class Compiler
 	    ig.allocateRegisters();
 				
 	    System.out.println("[PRINT NASM]");
-	    nasm.afficheNasm(baseName);
-	    */
+	    nasm.afficheNasm(baseName);*/
+
+
 	}
 	catch(Exception e){
 	    e.printStackTrace();
