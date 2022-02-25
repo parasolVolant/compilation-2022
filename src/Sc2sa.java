@@ -415,7 +415,8 @@ public class Sc2sa extends DepthFirstAdapter {
 
     @Override
     public void caseANombreExp6(ANombreExp6 node) {
-        node.getNombre().apply(this);
+        int val = Integer.parseInt(node.getNombre().getText());
+        this.returnValue = new SaExpInt(val);
     }
 
     @Override
