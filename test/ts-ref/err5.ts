@@ -1,6 +1,6 @@
 TABLE GLOBALE
-f	FCT	1
+f	FCT	0
 main	FCT	0
 TABLE LOCALE : f
-a	PARAM	4	0
 TABLE LOCALE : main
+f	VAR  	1	0
