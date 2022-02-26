@@ -47,9 +47,9 @@ public class Sc2sa extends DepthFirstAdapter {
 
     @Override
     public void caseADecvarListedecvar(ADecvarListedecvar node) {
-        SaDecVar var = null;
+        SaDec var = null;
         node.getDecvar().apply(this);
-        var = (SaDecVar) this.returnValue;
+        var = (SaDec) this.returnValue;
         this.returnValue = new SaLDec(var, null);
     }
 
@@ -89,6 +89,7 @@ public class Sc2sa extends DepthFirstAdapter {
         String name = node.getIdentif().getText();
         int size = Integer.parseInt(node.getNombre().getText());
         this.returnValue = new SaDecTab(name, size);
+
     }
 
     @Override
@@ -216,7 +217,7 @@ public class Sc2sa extends DepthFirstAdapter {
 
     @Override
     public void caseALinstfinalListeinst(ALinstfinalListeinst node) {
-        returnValue = null;
+        this.returnValue = null;
     }
 
     @Override
@@ -426,7 +427,10 @@ public class Sc2sa extends DepthFirstAdapter {
 
     @Override
     public void caseAVarExp6(AVarExp6 node) {
+        SaVar var = null;
         node.getVar().apply(this);
+        var = (SaVar) this.returnValue;
+        this.returnValue = new SaExpVar(var);
     }
 
     @Override
