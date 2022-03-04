@@ -78,7 +78,7 @@ def findClasspath() :
         classpath += ("" if len(classpath) == 0 else ":") + root
         break
 
-  classpath += "/../xerces-2_12_1/*"
+  classpath += ("" if len(classpath) == 0 else ":")+"../xerces-2_12_1/*"
   return classpath
 ################################################################################
 
