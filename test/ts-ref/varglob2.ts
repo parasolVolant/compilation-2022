@@ -1,4 +1,4 @@
 TABLE GLOBALE
-variable	VAR  	1	0
+variable	VAR  	4	0
 main	FCT	0
 TABLE LOCALE : main
