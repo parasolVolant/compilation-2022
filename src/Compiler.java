@@ -3,8 +3,6 @@ import sa.SaNode;
 import sc.parser.*;
 import sc.lexer.*;
 import sc.node.*;
-import ts.Sa2ts;
-import ts.Ts;
 
 import java.io.*;
 //import sa.*;
@@ -66,7 +64,7 @@ public class Compiler
 	    }
 	    
 	    /*System.out.println("[BUILD TS] ");
-	    Ts tableGlobale = new Sa2ts(saRoot).getTableGlobale();
+	    Ts tableGlobale = new ts.Sa2ts(saRoot).getTableGlobale();
 
 	    if(verboseLevel > 1){
 		System.out.println("[PRINT TS]");
