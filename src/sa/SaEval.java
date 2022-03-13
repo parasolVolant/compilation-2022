@@ -233,7 +233,6 @@ public class SaEval extends SaDepthFirstVisitor <Integer> {
     public Integer visit(SaAppel node)
     {
 	defaultIn(node);
-		System.out.println("bonsoir");
 	TsItemFct fct = node.tsItem;
 	SaLExp lArgs = null;
 	SaLExp l;
