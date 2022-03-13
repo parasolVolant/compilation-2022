@@ -6,6 +6,8 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
 
     public Sa2ts(SaProg prog) {
         super();
+        this.tableGlobale = new Ts();
+        this.tableLocaleCourante = new Ts();
 
     }
 
@@ -23,6 +25,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     public Void visit(SaDecTab node) {
 
         defaultIn(node);
+
         String identif = node.getNom();
         int taille = node.getTaille();
         node.tsItem = tableGlobale.variables.get(identif);
@@ -30,8 +33,11 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
             context = Context.GLOBAL;
             node.tsItem = tableGlobale.addVar(identif,taille);
 
+
         }
-        else  new Exception();
+
+
+        else  new Exception("test");
         defaultOut(node);
         return null;
 
@@ -42,22 +48,15 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     @Override
     public Void visit(SaDecFonc node) {
         defaultIn(node);
-
+        tableLocaleCourante = new Ts();
         String identif = node.getNom();
-        int nbArgs;
         node.tsItem = tableGlobale.fonctions.get(identif);
 
         if(node.tsItem == null){
 
-           if (node.getParametres() == null) nbArgs = 0;
+           int nbArgs = (node.getParametres() == null)? 0 : node.getParametres().length();
 
-           else nbArgs = node.getParametres().length();
-
-           tableLocaleCourante = new Ts();
-
-           node.tsItem = tableGlobale.addFct(identif,nbArgs,tableLocaleCourante,node);
-
-            context = Context.PARAM;
+           context = Context.PARAM;
 
             if(node.getParametres() != null) this.visit(node.getParametres());
 
@@ -65,13 +64,21 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
 
             if(node.getVariable() != null) this.visit(node.getVariable());
 
+
             if(node.getCorps() != null) node.getCorps().accept(this);
 
             context = Context.GLOBAL;
+
+            node.tsItem = tableGlobale.addFct(identif,nbArgs,tableLocaleCourante,node);
+
+
+
     }
-        else  new Exception();
+        else  new Exception("test");
 
         defaultOut(node);
+
+
 
         return null;
     }
@@ -82,17 +89,19 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
 
         String identif = node.getNom();
         int taille = 1;
+
         node.tsItem = tableGlobale.variables.get(identif);
         if (node.tsItem == null) {
 
-        tableGlobale.addVar(identif,taille);
-        context = Context.GLOBAL;
+            context = Context.GLOBAL;
+            tableGlobale.addVar(identif,taille);
+
 
 
         }
 
 
-        else  new Exception();
+        else  new Exception("test");
 
         defaultOut(node);
 
@@ -105,26 +114,19 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
         String identif = node.getNom();
         int taille = 1;
 
-        context = Context.LOCAL;
-        node.tsItem = tableLocaleCourante.getVar(identif);
-        if (node.tsItem != null)  new Exception();
+        if(context == Context.LOCAL){
+        node.tsItem = tableLocaleCourante.variables.get(identif);
+        if (node.tsItem == null)  new Exception("test");}
 
-        context = Context.PARAM;
-        node.tsItem = tableLocaleCourante.getVar(identif);
-        if (node.tsItem.isParam)  try {
-            throw new Exception();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        context = Context.GLOBAL;
-        node.tsItem = tableGlobale.getVar(identif);
-        if (node.tsItem == null)  try {
-            throw new Exception();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+        if(context == Context.PARAM){
+        node.tsItem = tableLocaleCourante.variables.get(identif);
+
+        if (!node.tsItem.isParam) new Exception("test");}
+
+
+        if(context == Context.GLOBAL){
+        node.tsItem = tableGlobale.variables.get(identif);
+        if (node.tsItem == null)  new Exception("test");}
         defaultOut(node);
         return null;
     }
@@ -132,34 +134,39 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     @Override
     public Void visit(SaAppel node) {
         defaultIn(node);
+
         String identif = node.getNom();
-        int nbArgs;
 
         node.tsItem = tableGlobale.fonctions.get(identif);
 
-        if(node.tsItem != null) {
+        if(node.tsItem != null)
+{
 
-            if (node.getArguments() == null) nbArgs = 0;
+            int nbArgs = (node.getArguments() == null)? 0 : node.getArguments().length();
 
-            else nbArgs = node.getArguments().length();
+            if(context == Context.PARAM){
+
+                if (node.tsItem.getNbArgs()!= nbArgs) new Exception("test");
+
+                if (node.getArguments() != null) this.visit(node.getArguments());
+
+               if (tableGlobale.fonctions.get("main") == null || tableGlobale.fonctions.get("main").getNbArgs() != 0)
+                new Exception("test");
+
+            }
 
 
-            context = Context.PARAM;
-            if (node.tsItem.getNbArgs() != nbArgs) new Exception();
-
-            if (node.getArguments() != null) this.visit(node.getArguments());
-
-            if (tableGlobale.fonctions.get("main") == null || tableGlobale.fonctions.get("main").getNbArgs() != 0)
-                new Exception();
 
         }
 
-        else new Exception();
+        else new Exception("test");
 
         defaultOut(node);
         return null;
 
     }
+
+
 
     @Override
     public Void visit(SaVarIndicee node) {
@@ -171,11 +178,20 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
 
         node.tsItem = tableLocaleCourante.variables.get(identif);
 
-        if (node.tsItem != null){
-        context = Context.GLOBAL;
+        if(context == Context.GLOBAL){
+       if (node.tsItem != null){
+
         this.visit(node.getIndice());
         }
+        }
+
+
+
+        else new Exception("test");
+
+
         defaultOut(node);
+
 
 
 
@@ -183,6 +199,9 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     }
 
     public Ts getTableGlobale() {
+
         return tableGlobale;
     }
+
+
 }
