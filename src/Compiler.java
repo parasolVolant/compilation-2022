@@ -62,7 +62,7 @@ public class Compiler
 
 
 
-	    if(verboseLevel > 1){
+	   if(verboseLevel > 1){
 		System.out.println("[PRINT SA]");
 		new Sa2Xml(saRoot, baseName);
 	    }
