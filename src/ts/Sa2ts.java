@@ -112,8 +112,8 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
         }
 
         else {
-
             tableContext = tableGlobale; }
+
         node.tsItem = tableContext.variables.get(identif);
         if (node.tsItem  == null || node.tsItem.getPortee() != tableContext) {
 
