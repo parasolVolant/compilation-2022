@@ -1,3 +1,6 @@
+import c3a.C3a;
+import c3a.Sa2C3a;
+import c3a.Sa2c3a;
 import sa.Sa2Xml;
 import sa.SaNode;
 import sa.SaProg;
@@ -76,16 +79,16 @@ public class Compiler
 	    }
 
 
-	    /*
+
 	    System.out.println("[BUILD C3A] ");
-	    C3a c3a = new Sa2c3a(saRoot, tableGlobale).getC3a();
+	    C3a c3a = new Sa2C3a(saRoot, tableGlobale).getC3a();
 
 	    if(verboseLevel > 1){
 		System.out.println("[PRINT C3A] ");
 		c3a.affiche(baseName);
 	    }
 	    
-	    System.out.println("[BUILD PRE NASM] ");
+	    /*System.out.println("[BUILD PRE NASM] ");
 	    Nasm nasm = new C3a2nasm(c3a, tableGlobale).getNasm();
 	    if(verboseLevel > 1){
 		System.out.println("[PRINT PRE NASM] ");
