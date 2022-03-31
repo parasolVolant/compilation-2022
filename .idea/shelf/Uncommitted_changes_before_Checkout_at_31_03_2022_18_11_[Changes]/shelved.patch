@@ -1,0 +1,3328 @@
+Index: src/nasm/NasmRest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmRest.java b/src/nasm/NasmRest.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmRest.java	(date 1648406087000)
+@@ -0,0 +1,21 @@
++package nasm;
++
++public class NasmRest extends NasmPseudoInst {
++    
++    public NasmRest(NasmLabel label, int nb, String comment){
++	this.label = label;
++	this.nb = nb;
++	this.sizeInBytes = 10;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "rest", this.nb, this.comment);
++    }
++
++
++}
+Index: src/nasm/NasmXor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmXor.java b/src/nasm/NasmXor.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmXor.java	(date 1648406087000)
+@@ -0,0 +1,24 @@
++package nasm;
++
++public class NasmXor extends NasmInst {
++    
++    public NasmXor(NasmOperand label, NasmOperand destination, NasmOperand source, String comment){
++	destUse = true;
++	destDef = true;
++	srcUse = true;
++	this.label = label;
++	this.destination = destination;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "xor", this.destination, this.source, this.comment);
++    }
++
++
++}
+Index: src/nasm/NasmEmpty.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmEmpty.java b/src/nasm/NasmEmpty.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmEmpty.java	(date 1648406087000)
+@@ -0,0 +1,18 @@
++package nasm;
++
++public class NasmEmpty extends NasmInst {
++    
++    public NasmEmpty(NasmOperand label, String comment){
++	this.label = label;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "", null, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmPop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmPop.java b/src/nasm/NasmPop.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmPop.java	(date 1648406087000)
+@@ -0,0 +1,20 @@
++package nasm;
++
++public class NasmPop extends NasmInst {
++    
++    public NasmPop(NasmOperand label, NasmOperand destination, String comment){
++	destDef = true;
++	this.label = label;
++	this.destination = destination;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "pop", this.destination, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmCall.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmCall.java b/src/nasm/NasmCall.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmCall.java	(date 1648406087000)
+@@ -0,0 +1,19 @@
++package nasm;
++
++public class NasmCall extends NasmInst {
++    
++    public NasmCall(NasmOperand label, NasmOperand address, String comment){
++	this.label = label;
++	this.address = address;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "call", this.address, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmPush.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmPush.java b/src/nasm/NasmPush.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmPush.java	(date 1648406087000)
+@@ -0,0 +1,20 @@
++package nasm;
++
++public class NasmPush extends NasmInst {
++    
++    public NasmPush(NasmOperand label, NasmOperand source, String comment){
++	//	srcUse = true;
++	this.label = label;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "push", this.source, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmVisitor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmVisitor.java b/src/nasm/NasmVisitor.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmVisitor.java	(date 1648406087000)
+@@ -0,0 +1,43 @@
++package nasm;
++
++public interface NasmVisitor <T> {
++    public T visit(NasmAdd inst);
++    public T visit(NasmCall inst);
++    public T visit(NasmDiv inst);
++    public T visit(NasmJe inst);
++    public T visit(NasmJle inst);
++    public T visit(NasmJne inst);
++    public T visit(NasmMul inst);
++    public T visit(NasmOr inst);
++    public T visit(NasmCmp inst);
++    public T visit(NasmInst inst);
++    public T visit(NasmJge inst);
++    public T visit(NasmJl inst);
++    public T visit(NasmNot inst);
++    public T visit(NasmPop inst);
++    public T visit(NasmRet inst);
++    public T visit(NasmXor inst);
++    public T visit(NasmAnd inst);
++    public T visit(NasmJg inst);
++    public T visit(NasmJmp inst);
++    public T visit(NasmMov inst);
++    public T visit(NasmPush inst);
++    public T visit(NasmSub inst);
++    public T visit(NasmEmpty inst);
++    public T visit(NasmInt inst);
++
++    public T visit(NasmAddress operand);
++    public T visit(NasmConstant operand);
++    public T visit(NasmLabel operand);
++    public T visit(NasmRegister operand);
++
++    public T visit(NasmResb pseudoInst);
++    public T visit(NasmResw pseudoInst);
++    public T visit(NasmResd pseudoInst);
++    public T visit(NasmResq pseudoInst);
++    public T visit(NasmRest pseudoInst);
++
++    
++}
++	
++
+Index: src/nasm/NasmEval.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmEval.java b/src/nasm/NasmEval.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmEval.java	(date 1648406087000)
+@@ -0,0 +1,378 @@
++package nasm;
++
++
++import java.io.FileNotFoundException;
++import java.io.PrintStream;
++import java.util.ArrayList;
++import java.util.HashMap;
++
++/*
++This class emulates pre-nasm for x86-64 architecture.
++It handles only integers on 4 bytes and have unlimited register.
++ */
++
++public class NasmEval implements NasmVisitor<Integer>{
++    private Nasm code;
++    private int regNb;
++    private HashMap<String, Integer> labelToLine;
++    private HashMap<String, Integer> globalVariableToAddress;
++    private Memory memory;
++    private boolean stop;
++    private ArrayList<Integer> output;
++
++    // registers
++    private int[] registers;
++    
++    private int eip = 0;
++    private int eax = 0; 
++    private int ebx = 0; 
++    private int ecx = 0; 
++    private int edx = 0; 
++
++    //flags
++    // Carry Flag -> not used
++    private boolean CF = false;
++    // Parity Flag -> not used
++    private boolean PF = false;
++    // Zero Flag
++    private boolean ZF = false;
++    // Sign Flag
++    private boolean SF = false;
++    // Overflow Flag -> not used
++    private boolean OF = false;
++	
++    private int verboseLevel;
++
++    public void PrintGlobalVariables(){
++    for (HashMap.Entry<String, Integer> e : globalVariableToAddress.entrySet())
++   	System.out.println("[" + e.getValue() + "]\t" + e.getKey() + " = " + memory.readInt(e.getValue()));
++
++    }
++    public NasmEval(Nasm code, int stackSize, int verboseLevel){
++        this.code = code;
++	this.verboseLevel = verboseLevel;
++	regNb = this.code.getTempCounter();
++        registers = new int[10*regNb];
++        eip = 0;
++        stop = false;
++        output = new ArrayList<>();
++        labelToLine = associateLabelToLine();
++	int dataSize = 0;
++	globalVariableToAddress = new HashMap<>();
++
++	// compute addresses of global variables
++	for(int i = 0; i < code.sectionBss.size(); i++){
++	    NasmPseudoInst pseudoInst = this.code.sectionBss.get(i);
++	    globalVariableToAddress.put(pseudoInst.label.val, dataSize);
++	    //	    System.out.println("var :" + pseudoInst.label.val + " address = " + dataSize);
++	    dataSize += pseudoInst.nb * pseudoInst.sizeInBytes;
++	}
++
++	memory = new Memory(dataSize, stackSize);
++	
++        while(!stop && eip < code.sectionText.size()){
++	    NasmInst inst = this.code.sectionText.get(eip);
++	    if(verboseLevel > 0){
++		System.out.println("--------------------------------------");
++
++		PrintGlobalVariables();
++		System.out.println("eip = " + eip + "\tesp = " + memory.esp + "\t ebp = " + memory.ebp);
++		System.out.println("eax = " + eax + "\tebx = " + ebx + "\tecx = " + ecx + "\tedx = " + edx);
++		System.out.println("CF = " + CF + "\tPF = " + PF + "\tZF = " + ZF + "\tSF = " + SF + "\tOF = " + OF);
++		printRegisters();
++		System.out.print("stack : \t");
++		memory.printStack();
++		System.out.println(inst);
++	    }
++            eip = inst.accept(this);
++        }
++	//	displayOutput();
++    }
++
++    public void printRegisters(){
++	for(int i=0; i < regNb; i++){
++	    System.out.print("r" + i + ":" + registers[i] + "\t");
++	}
++	//	System.out.println();
++    }
++
++    public void displayOutput(){
++        for(var val : output)
++            System.out.println(val);
++    }
++
++    public void displayOutput(String outputFile) throws FileNotFoundException {
++        var out = new PrintStream(outputFile);
++        for(var val : output)
++            out.println(val);
++    }
++    
++    private HashMap<String, Integer> associateLabelToLine(){
++	HashMap<String, Integer> labelToLine = new HashMap<>();
++        var instructions = code.sectionText;
++        for(int i = 0; i <instructions.size(); i++){
++            if(instructions.get(i).label != null) {
++                var label = (NasmLabel)instructions.get(i).label;
++                labelToLine.put(label.val, i);
++            }
++        }
++	return labelToLine;
++    }
++
++    private void affect(NasmOperand dest, int src){
++        if(dest instanceof NasmRegister)
++	    affect((NasmRegister) dest, src);
++	else if(dest instanceof NasmAddress)
++	    affect((NasmAddress) dest, src);
++    }
++
++    // write in a register
++    
++    private void affect(NasmRegister dest, int src){
++	//		System.out.println("affect value " + src + " to register");
++	if(dest.color == Nasm.REG_EAX)
++	    eax = src;
++	else if (dest.color == Nasm.REG_EBX)
++	    ebx = src;
++	else if (dest.color == Nasm.REG_ECX)
++	    ecx = src;
++	else if (dest.color == Nasm.REG_EDX)
++	    edx = src;
++	else if (dest.color == Nasm.REG_ESP)
++	    memory.esp = src;
++	else if (dest.color == Nasm.REG_EBP)
++	    memory.ebp = src;
++	else
++	    registers[dest.val] = src;
++    }
++
++    // write in memory
++    private void affect(NasmAddress dest, int src){
++	if(dest.base instanceof NasmLabel){
++	    if(globalVariableToAddress.containsKey(((NasmLabel)dest.base).val)){
++		int globalVarAddress = globalVariableToAddress.get(((NasmLabel)dest.base).val);
++		if(dest.direction == '+')
++		    memory.writeInt(globalVarAddress + dest.offset.accept(this), src);
++		else
++		    memory.writeInt(globalVarAddress - dest.offset.accept(this), src);
++	    }
++	}
++	else{
++	    if(dest.direction == '+')
++		memory.writeInt(dest.base.accept(this) + dest.offset.accept(this), src);
++	    else
++		memory.writeInt(dest.base.accept(this) - dest.offset.accept(this), src);
++	}
++    }
++
++    /* visit operand -> return its value*/
++    @Override
++    public Integer visit(NasmAddress operand) {
++        if(operand.direction == '+')
++            return memory.readInt(operand.base.accept(this) + operand.offset.accept(this));
++        else
++            return memory.readInt(operand.base.accept(this) - operand.offset.accept(this));
++    }
++
++    
++    @Override
++    public Integer visit(NasmRegister operand) {
++	if(operand.color == Nasm.REG_EAX)
++	    return eax;
++	if (operand.color == Nasm.REG_EBX)
++	    return ebx;
++	if (operand.color == Nasm.REG_ECX)
++	    return ecx;
++	if (operand.color == Nasm.REG_EDX)
++	    return edx;
++	if (operand.color == Nasm.REG_ESP)
++	    return memory.esp;
++	if (operand.color == Nasm.REG_EBP)
++	    return memory.ebp;
++	else
++	    return registers[operand.val];
++    }
++
++    @Override
++    public Integer visit(NasmConstant operand) {
++	
++        return operand.val;
++    }
++
++    @Override
++    public Integer visit(NasmLabel operand) {
++	// if label corresponds to a line of code, return the line number
++        if(labelToLine.containsKey(operand.val))
++            return labelToLine.get(operand.val);
++	
++	// if label corresponds to a global variable, return it address
++        if(globalVariableToAddress.containsKey(operand.val)){
++	    int globalVarAddress = globalVariableToAddress.get(operand.val);
++	    //	    System.out.println("-->var = " + operand.val + " address = " + globalVarAddress + " value = " + memory.readInt(globalVarAddress));
++            return globalVarAddress;
++	    //            return memory.readInt(globalVarAddress);
++	}
++	throw new RuntimeException("label " + operand.val + "does not correspond to existing label or global variable");
++    }
++
++    /* arithmetic operations */
++    
++    @Override
++    public Integer visit(NasmAdd inst) {
++	affect(inst.destination, inst.source.accept(this) + inst.destination.accept(this));
++        return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmSub inst) {
++        affect(inst.destination, inst.destination.accept(this) - inst.source.accept(this));
++	return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmMul inst) {
++        affect(inst.destination, inst.source.accept(this) * inst.destination.accept(this));
++	return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmDiv inst) {
++        var divisor  = inst.source.accept(this);
++        var temp = eax;
++        eax = temp / divisor;
++        edx = temp % divisor;
++	return eip + 1;
++    }
++
++    /* logical operations */
++    @Override
++    public Integer visit(NasmOr inst) {
++        affect(inst.destination, inst.source.accept(this) | inst.destination.accept(this));
++        return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmNot inst) {
++        affect(inst.destination, ~ inst.destination.accept(this));
++        return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmXor inst) {
++        affect(inst.destination, inst.source.accept(this) ^ inst.destination.accept(this));
++	return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmAnd inst) {
++        affect(inst.destination, inst.source.accept(this) & inst.destination.accept(this));
++	return eip + 1;
++    }
++
++    /* function call */
++    @Override
++    public Integer visit(NasmCall inst) {
++        if(inst.address instanceof NasmLabel && ((NasmLabel)inst.address).val.equals("iprintLF")){
++            output.add(eax);
++	    return eip + 1;
++	}
++	memory.pushInt(eip);
++	return inst.address.accept(this);
++    }
++
++    /* comparison */
++    @Override
++    public Integer visit(NasmCmp inst) {
++        int valSrc = inst.source.accept(this);
++        int valDest = inst.destination.accept(this);
++        ZF = (valDest == valSrc)? true : false;
++	SF = (valDest < valSrc)? true : false;
++        return eip + 1;
++    }
++    
++    /* jumps */
++    @Override
++    public Integer visit(NasmJe inst) {
++        return (ZF)? inst.address.accept(this) : eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmJle inst) {
++        return (ZF || SF)? inst.address.accept(this) : eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmJne inst) {
++	//        return (!ZF && SF)? inst.address.accept(this) : eip + 1;
++        return (!ZF)? inst.address.accept(this) : eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmJge inst) {
++        return (ZF || !SF)? inst.address.accept(this) : eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmJl inst) {
++	return (!ZF && SF)? inst.address.accept(this) : eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmJg inst) {
++        return (!ZF || SF)? inst.address.accept(this) : eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmJmp inst) {
++        return inst.address.accept(this);
++    }
++
++    @Override
++    public Integer visit(NasmPop inst) {
++        affect(inst.destination, memory.popInt());
++	return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmPush inst) {
++        memory.pushInt(inst.source.accept(this));
++        return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmRet inst) {
++        return memory.popInt() + 1;
++    }
++
++    @Override
++    public Integer visit(NasmMov inst) {
++        affect(inst.destination, inst.source.accept(this));
++	return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmInt inst) {
++        if(eax == 1)
++            stop = true;
++        return eip + 1;
++    }
++
++    @Override
++    public Integer visit(NasmInst inst) {
++        return 0;
++    }
++
++    @Override
++    public Integer visit(NasmEmpty inst) {
++        return eip + 1;
++    }
++
++    public Integer visit(NasmResb pseudoInst){return 0;}
++    public Integer visit(NasmResw pseudoInst){return 0;}
++    public Integer visit(NasmResd pseudoInst){return 0;}
++    public Integer visit(NasmResq pseudoInst){return 0;}
++    public Integer visit(NasmRest pseudoInst){return 0;}
++
++
++
++}
+Index: src/nasm/NasmOperand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmOperand.java b/src/nasm/NasmOperand.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmOperand.java	(date 1648406087000)
+@@ -0,0 +1,8 @@
++package nasm;
++
++public abstract class NasmOperand{
++    public boolean isGeneralRegister(){
++	return false;
++    }
++    public  abstract <T> T accept(NasmVisitor <T> visitor);
++}
+Index: src/nasm/Memory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/Memory.java b/src/nasm/Memory.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/Memory.java	(date 1648406087000)
+@@ -0,0 +1,136 @@
++package nasm;
++
++/* Big Endian */
++
++public class Memory{
++    /* stack segment */
++    private int ss;
++
++    /* data segment */
++    private int ds;
++
++    protected int ebp;
++    protected int esp;
++    private int memSize;
++    private int dataSize;
++    private int stackSize;
++    private byte[] mem;
++
++    public Memory(int dataSize, int stackSize){
++	this.dataSize = dataSize;
++	this.stackSize = stackSize;
++	this.memSize = dataSize + stackSize;
++	ss = memSize - 1;
++	esp = ss;
++	mem = new byte[memSize];
++	ds = 0;
++    }
++
++    public void printStack(){
++	for(int adr = ss - 3; adr > esp; adr = adr - 4){
++	    //	    System.out.print("[" + adr + "] " + readInt(adr) + "\t");
++	    System.out.print(readInt(adr) + "\t");
++	}
++	System.out.println();
++    }
++    
++    public int readInt(int address){
++	//	System.out.println("read memory at address " + address);
++	if((address < 0) || (address + 3 > ss))
++            throw new RuntimeException("segmentation fault");
++	return bytesToInt(mem[address], mem[address + 1], mem[address + 2], mem[address + 3]);
++    }
++
++    public void writeInt(int address, int value){
++	if((address < 0) || (address + 3 > ss))
++            throw new RuntimeException("segmentation fault");
++
++	byte[] fourBytes = intToBytes(value);
++	mem[address] = fourBytes[0];
++	mem[address + 1] = fourBytes[1];
++	mem[address + 2] = fourBytes[2];
++	mem[address + 3] = fourBytes[3];
++    }
++    
++    public void pushInt(int value){
++	if(esp - 3 < dataSize)
++            throw new RuntimeException("stack overflow");
++
++	byte[] fourBytes = intToBytes(value);
++	esp--;
++	mem[esp] = fourBytes[3];
++	esp--;
++	mem[esp] = fourBytes[2];
++	esp--;
++	mem[esp] = fourBytes[1];
++	esp--;
++	mem[esp] = fourBytes[0];
++	/*	mem[esp--] = fourBytes[3];
++	mem[esp--] = fourBytes[2];
++	mem[esp--] = fourBytes[1];
++	mem[esp--] = fourBytes[0];
++*/
++
++    }
++
++    public int popInt(){
++	if(esp + 3 >= ss)
++            throw new RuntimeException("stack underflow");
++	byte byte0 = mem[esp];
++	esp++;
++	byte byte1 = mem[esp];
++	esp++;
++	byte byte2 = mem[esp];
++	esp++;
++	byte byte3 = mem[esp];
++	esp++;
++	
++	/*	byte byte0 = mem[++esp];
++	byte byte1 = mem[++esp];
++	byte byte2 = mem[++esp];
++	byte byte3 = mem[++esp];*/
++	
++	return bytesToInt(byte0, byte1, byte2, byte3);
++    }
++
++    public int bytesToInt(byte byte0, byte byte1, byte byte2, byte byte3){
++        return  ((byte0 & 0xFF) << 24) |
++                ((byte1 & 0xFF) << 16) |
++                ((byte2 & 0xFF) << 8) |
++                ((byte3 & 0xFF) << 0);
++    }
++    
++    public byte[] intToBytes2( int data ) {    
++    byte[] result = new byte[4];
++    result[0] = (byte) ((data & 0xFF000000) >> 24);
++    result[1] = (byte) ((data & 0x00FF0000) >> 16);
++    result[2] = (byte) ((data & 0x0000FF00) >> 8);
++    result[3] = (byte) ((data & 0x000000FF) >> 0);
++    return result;        
++}
++    public byte[] intToBytes(int i)
++    {
++	byte[] result = new byte[4];
++	
++	result[0] = (byte) (i >> 24);
++	result[1] = (byte) (i >> 16);
++	result[2] = (byte) (i >> 8);
++	result[3] = (byte) (i /*>> 0*/);
++	
++	return result;
++    }
++
++    /*    public static void main(String[] args){
++	Memory mem = new Memory(100, 100);
++	mem.pushInt(3467);
++	int v = mem.popInt();
++	System.out.println("val =" + v);
++	v = mem.popInt();
++
++	mem.writeInt(96, 234);
++	int val = mem.readInt(96);
++	System.out.println("val =" + val);
++	
++	}*/
++    
++}
+Index: src/nasm/NasmConstant.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmConstant.java b/src/nasm/NasmConstant.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmConstant.java	(date 1648406087000)
+@@ -0,0 +1,16 @@
++package nasm;
++
++public class NasmConstant extends NasmOperand {
++    public int val;
++    public NasmConstant(int val){
++	this.val = val;
++    }
++
++    public String toString(){
++	return Integer.toString(this.val);
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++}
+Index: src/nasm/NasmResq.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmResq.java b/src/nasm/NasmResq.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmResq.java	(date 1648406087000)
+@@ -0,0 +1,21 @@
++package nasm;
++
++public class NasmResq extends NasmPseudoInst {
++    
++    public NasmResq(NasmLabel label, int nb, String comment){
++	this.label = label;
++	this.nb = nb;
++	this.sizeInBytes = 8;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "resq", this.nb, this.comment);
++    }
++
++
++}
+Index: src/nasm/NasmAnd.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmAnd.java b/src/nasm/NasmAnd.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmAnd.java	(date 1648406087000)
+@@ -0,0 +1,24 @@
++package nasm;
++
++public class NasmAnd extends NasmInst {
++    
++    public NasmAnd(NasmOperand label, NasmOperand destination, NasmOperand source, String comment){
++	destUse = true;
++	destDef = true;
++	srcUse = true;
++	this.label = label;
++	this.destination = destination;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "and", this.destination, this.source, this.comment);
++    }
++
++
++}
+Index: src/nasm/NasmInst.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmInst.java b/src/nasm/NasmInst.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmInst.java	(date 1648406087000)
+@@ -0,0 +1,42 @@
++package nasm;
++
++public abstract class NasmInst{
++    public NasmOperand label = null;
++    public NasmOperand destination = null;
++    public NasmOperand source = null;
++    public NasmOperand address = null;
++    public boolean destUse = false;
++    public boolean destDef = false;
++    public boolean srcUse = false;
++    public boolean srcDef = false;
++    String comment;
++    
++    void addLabel(String formatInst, NasmOperand label){
++	formatInst += label;
++    }
++    
++    public String formatInst(NasmOperand label, String opcode, NasmOperand arg1, NasmOperand arg2, String comment){
++	String s = "";
++	if(label != null)
++	    s = s + label + " :";
++	s = s + "\t" + opcode;
++	if(arg1 != null)
++	    if(arg1 instanceof NasmAddress)
++		s = s + "\tdword [" + arg1 + "]";
++	    else
++		s = s + "\t" + arg1;
++	if(arg2 != null)
++	    if(arg2 instanceof NasmAddress)
++		s = s + ",\tdword [" + arg2 + "]";
++	    else
++		s = s + ",\t" + arg2;
++	if(comment != null)
++	    s = s + "\t;" + comment;
++	return s;
++    }
++
++        public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++}
+Index: src/nasm/NasmResb.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmResb.java b/src/nasm/NasmResb.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmResb.java	(date 1648406087000)
+@@ -0,0 +1,21 @@
++package nasm;
++
++public class NasmResb extends NasmPseudoInst {
++    
++    public NasmResb(NasmLabel label, int nb, String comment){
++	this.label = label;
++	this.nb = nb;
++	this.sizeInBytes = 1;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "resb", this.nb, this.comment);
++    }
++
++
++}
+Index: src/nasm/NasmParser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmParser.java b/src/nasm/NasmParser.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmParser.java	(date 1648406087000)
+@@ -0,0 +1,300 @@
++package nasm;
++
++import ts.Ts;
++import java.io.IOException;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.util.HashMap;
++import java.util.Map;
++
++public class NasmParser{
++
++    private Nasm code;
++    private String[] linesArgs;
++    private NasmInst currentInstr;
++    private NasmInst complementaryInstr;
++    private NasmLabel labelToNextInstr;
++    private int IAL = 0; // Indice after label;
++    private HashMap<String, NasmRegister> nameToReg;
++
++
++    /*    (Map.of(
++            "eax", new NasmRegister(Nasm.REG_EAX),
++            "ebx", new NasmRegister(Nasm.REG_EBX),
++            "ecx", new NasmRegister(Nasm.REG_ECX),
++            "edx", new NasmRegister(Nasm.REG_EDX),
++            "esp", new NasmRegister(Nasm.REG_ESP),
++            "ebp", new NasmRegister(Nasm.REG_EBP),
++            "unk", new NasmRegister(Nasm.REG_UNK)
++	    ));*/
++
++    public NasmParser(){
++	code = new Nasm();
++
++	nameToReg = new HashMap<String, NasmRegister>();
++	NasmRegister reg_eax = new NasmRegister(-1);
++	reg_eax.colorRegister(Nasm.REG_EAX);
++	nameToReg.put("eax", reg_eax);
++	
++	NasmRegister reg_ebx = new NasmRegister(-1);
++	reg_ebx.colorRegister(Nasm.REG_EBX);
++	nameToReg.put("ebx", reg_ebx);
++	
++	NasmRegister reg_ecx = new NasmRegister(-1);
++	reg_ecx.colorRegister(Nasm.REG_ECX);
++	nameToReg.put("ecx", reg_ecx);
++	
++	NasmRegister reg_edx = new NasmRegister(-1);
++	reg_edx.colorRegister(Nasm.REG_EDX);
++	nameToReg.put("edx", reg_edx);
++	
++	NasmRegister reg_esp = new NasmRegister(-1);
++	reg_esp.colorRegister(Nasm.REG_ESP);
++	nameToReg.put("esp", reg_esp);
++	
++	NasmRegister reg_ebp = new NasmRegister(-1);
++	reg_ebp.colorRegister(Nasm.REG_EBP);
++	nameToReg.put("ebp", reg_ebp);
++	
++    }
++    
++    public Nasm parse(String filename) throws IOException {
++        try(var linesStream = Files.lines(Paths.get(filename))) {
++            linesStream.forEachOrdered(this::processLine);
++        }
++        return code;
++    }
++
++    private void processLine(String line){
++	//	System.out.println(line);
++	if(line.isEmpty()){return;}
++	if(line.startsWith("%include")) return;
++	if(line.startsWith("section")) return;
++	if(line.startsWith("global")) return;
++	if(line.startsWith("_start")) return;
++
++        currentInstr = null;
++        complementaryInstr = null;
++        line = line.replace("dword", "");
++        linesArgs = line.split("(,*([ ]|[\t]))+");
++        labelToNextInstr = null;
++        IAL = 0;
++        registerLabel();
++        if(line.contains("call"))
++	    //            currentInstr = new NasmCall(labelToNextInstr, new NasmAddress(new NasmLabel(linesArgs[IAL + 2])), "");
++            currentInstr = new NasmCall(labelToNextInstr, new NasmLabel(linesArgs[IAL + 2]), "");
++        else if(line.contains("mov")){
++            var leftOp = getRightOperandType(linesArgs[IAL + 2]);
++            var rightOp = getRightOperandType(linesArgs[IAL + 3]);
++            currentInstr = new NasmMov(labelToNextInstr, leftOp, rightOp, "");
++        }
++        else if(line.contains("push")){
++            var rightOp = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmPush(labelToNextInstr, rightOp, "");
++        }
++        else if(line.contains("pop")){
++            var rightOp = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmPop(labelToNextInstr, rightOp, "");
++        }
++        else if(line.contains("add")){
++            var leftOp = getRightOperandType(linesArgs[IAL + 2]);
++            var rightOp = getRightOperandType(linesArgs[IAL + 3]);
++            currentInstr = new NasmAdd(labelToNextInstr, leftOp, rightOp, "");
++        }
++        else if(line.contains("sub")){
++            var leftOp = getRightOperandType(linesArgs[IAL + 2]);
++            var rightOp = getRightOperandType(linesArgs[IAL + 3]);
++            currentInstr = new NasmSub(labelToNextInstr, leftOp, rightOp, "");
++        }
++        else if(line.contains("imul")) {
++            var leftOp = getRightOperandType(linesArgs[IAL + 2]);
++            var rightOp = getRightOperandType(linesArgs[IAL + 3]);
++            currentInstr = new NasmMul(labelToNextInstr, leftOp, rightOp, "");
++        }
++        else if(line.contains("idiv")){
++            var rightOp = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmDiv(labelToNextInstr, rightOp, "");
++        }
++        else if(line.contains("and")){
++            var leftOp = getRightOperandType(linesArgs[IAL + 2]);
++            var rightOp = getRightOperandType(linesArgs[IAL + 3]);
++            currentInstr = new NasmAnd(labelToNextInstr, leftOp, rightOp, "");
++        }
++        else if(linesArgs[IAL + 1].contains("or")){
++            var leftOp = getRightOperandType(linesArgs[IAL + 2]);
++            var rightOp = getRightOperandType(linesArgs[IAL + 3]);
++            currentInstr = new NasmOr(labelToNextInstr, leftOp, rightOp, "");
++        }
++        else if(line.contains("xor")){
++            var leftOp = getRightOperandType(linesArgs[IAL + 2]);
++            var rightOp = getRightOperandType(linesArgs[IAL + 3]);
++            currentInstr = new NasmXor(labelToNextInstr, leftOp, rightOp, "");
++        }
++        else if(line.contains("jmp")){
++            var address = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmJmp(labelToNextInstr, address, "");
++        }
++        else if(line.contains("je")){
++            var address = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmJe(labelToNextInstr, address, "");
++        }
++        else if(line.contains("jne")){
++            var address = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmJne(labelToNextInstr, address, "");
++        }
++        else if(line.contains("jg")){
++            var address = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmJg(labelToNextInstr, address, "");
++        }
++        else if(line.contains("jge")){
++            var address = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmJge(labelToNextInstr, address, "");
++        }
++        else if(line.contains("jl")){
++            var address = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmJl(labelToNextInstr, address, "");
++        }
++        else if(line.contains("jle")){
++            var address = getRightOperandType(linesArgs[IAL + 2]);
++            currentInstr = new NasmJle(labelToNextInstr, address, "");
++        }
++        else if(line.contains("cmp")){
++            var leftOp = getRightOperandType(linesArgs[IAL + 2]);
++            var rightOp = getRightOperandType(linesArgs[IAL + 3]);
++            currentInstr = new NasmCmp(labelToNextInstr, leftOp, rightOp, "");
++        }
++        else if(line.contains("ret"))
++            currentInstr = new NasmRet(labelToNextInstr, "");
++
++        else if(line.contains("int 0x80"))
++            currentInstr = new NasmInt(labelToNextInstr, "");
++
++	else if(line.contains("resd")){
++	    int nb = Integer.parseInt(linesArgs[IAL + 2]);
++	    code.ajoutePseudoInst(new NasmResd(labelToNextInstr, nb, ""));
++	}
++	else if(line.contains("resb")){
++	    int nb = Integer.parseInt(linesArgs[IAL + 2]);
++	    code.ajoutePseudoInst(new NasmResb(labelToNextInstr, nb, ""));
++	}
++	/*        else
++            currentInstr = new NasmEmpty(labelToNextInstr, "");
++	*/
++        if(complementaryInstr != null)
++            code.ajouteInst(complementaryInstr);
++        if(currentInstr != null)
++	    code.ajouteInst(currentInstr);
++    }
++
++    private void registerLabel(){
++        if(!linesArgs[0].isEmpty()) {
++            labelToNextInstr = new NasmLabel(linesArgs[0]);
++            IAL = 1;
++        }
++    }
++
++    public NasmOperand getRightOperandType(String opName){
++        if(isMemoryAccessOperand(opName)) {
++           return getRightMemoryOperand(opName);
++        }
++        else if (isRegister(opName))
++            return getNasmRegister(opName);
++        else if(isNumber(opName)){
++            var numValue = Integer.parseInt(opName);
++            return new NasmConstant(numValue);
++        }
++        else
++            return new NasmLabel(opName);
++    }
++
++    private boolean isMemoryAccessOperand(String opName){
++        return opName.contains("[") && opName.contains("]");
++    }
++
++    private NasmOperand getRightMemoryOperand(String opName){
++        var simplifiedName = opName.replace("[", "").replace("]", "");
++        if (isRelativeAddressing(simplifiedName)) {
++            var direction = '+';
++            if (simplifiedName.contains("-"))
++                direction = '-';
++	    // on part d'une principe qu'un adresse relative est  de la forme 'base {+| -} offset'
++	    // offset est une constante numérique ou un registre
++	    // base est ...
++            var baseName = simplifiedName.split("\\" + direction)[0];
++            var offset = simplifiedName.split("\\" + direction)[1];
++            var baseOp = getRightOperandType(baseName);
++            var offsetOp = (NasmOperand)null;
++            if(isNumber(offset))
++                offsetOp = new NasmConstant(Integer.parseInt(offset));
++            else {
++                offsetOp = getNasmRegister(offset);
++            }
++            return new NasmAddress(baseOp, direction, offsetOp);
++        }
++        else if (isRegister(simplifiedName))
++            return new NasmAddress(getNasmRegister(simplifiedName));
++        else
++        {
++            try {
++		var address = Integer.parseInt(simplifiedName);
++		return new NasmAddress(new NasmConstant(address));
++	    } catch(NumberFormatException e){
++		return new NasmAddress(new NasmLabel(simplifiedName));
++	    }
++        }
++    }
++
++
++    private boolean isRelativeAddressing(String simplifiedOpName){
++        return simplifiedOpName.contains("-") || simplifiedOpName.contains("+");
++    }
++
++    private boolean isNumber(String text){
++        try{
++            var res = Integer.parseInt(text);
++            return true;
++        }catch(NumberFormatException e){
++            return false;
++        }
++    }
++
++    private NasmRegister getNasmRegister(String registerName){
++        if(nameToReg.containsKey(registerName))
++	    return nameToReg.get(registerName);
++
++	StringBuilder sb = new StringBuilder(registerName);
++        sb.deleteCharAt(0);
++	int registerNb =  Integer.parseInt(sb.toString());
++	NasmRegister reg = new NasmRegister(registerNb);
++	code.tempCounter++;
++	/*	    if(registerName.equals("eax")) reg.colorRegister(Nasm.REG_EAX);
++	    else if(registerName.equals("ebx")) reg.colorRegister(Nasm.REG_EBX);
++	    else if(registerName.equals("ecx")) reg.colorRegister(Nasm.REG_ECX);
++	    else if(registerName.equals("edx")) reg.colorRegister(Nasm.REG_EDX);
++	    else if(registerName.equals("esp")) reg.colorRegister(Nasm.REG_ESP);
++	    else if(registerName.equals("ebp")) reg.colorRegister(Nasm.REG_EBP);*/
++	    
++	nameToReg.put(registerName, reg);
++	return reg;
++    }
++
++    private boolean isRegister(String opName){
++        return (nameToReg.containsKey(opName) || opName.startsWith("r"));
++    }
++
++    /*    public static  void main(String[] args){
++        var parser = new NasmParser();
++        try {
++            var stParser = new ts.TsParser();
++            var res = parser.parse("fibo.pre-nasm", stParser.parse("fibo.ts"));
++            for(var instr : res.sectionText){
++                System.out.println(instr);
++            }
++        }catch(IOException e){
++            e.printStackTrace();
++        }
++
++       // System.out.println(fdf);
++       }*/
++
++}
+Index: src/nasm/NasmResw.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmResw.java b/src/nasm/NasmResw.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmResw.java	(date 1648406087000)
+@@ -0,0 +1,21 @@
++package nasm;
++
++public class NasmResw extends NasmPseudoInst {
++    
++    public NasmResw(NasmLabel label, int nb, String comment){
++	this.label = label;
++	this.nb = nb;
++	this.sizeInBytes = 2;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "resw", this.nb, this.comment);
++    }
++
++
++}
+Index: src/nasm/Nasm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/Nasm.java b/src/nasm/Nasm.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/Nasm.java	(date 1648406087000)
+@@ -0,0 +1,148 @@
++package nasm;
++import java.util.*;
++import java.io.*;
++import ts.*;
++    
++public class Nasm{
++    public List<NasmInst> sectionText;
++    public List<NasmPseudoInst> sectionBss;
++    protected int tempCounter = 0;
++    Ts tableGlobale;
++    public static int REG_EAX = 0;
++    public static int REG_EBX = 1;
++    public static int REG_ECX = 2;
++    public static int REG_EDX = 3;
++    public static int REG_ESP = 4;
++    public static int REG_EBP = 5;
++    public static int REG_UNK = 6;
++    //    public static int NB_PREDEFINED_REG = 7;
++
++    public Nasm(Ts tableGlobale){
++	this.tableGlobale = tableGlobale;
++	this.sectionBss = new ArrayList<NasmPseudoInst>();
++	this.sectionText = new ArrayList<NasmInst>();
++	populateSectionBss(tableGlobale);
++    }
++
++    public Nasm(){
++	this.sectionBss = new ArrayList<NasmPseudoInst>();
++	this.sectionText = new ArrayList<NasmInst>();
++    }
++
++    public int getTempCounter(){return this.tempCounter;}
++    public int setTempCounter(int c){return this.tempCounter = c;}
++    
++    public void ajoutePseudoInst(NasmPseudoInst pseudoInst){
++	this.sectionBss.add(pseudoInst);
++    }
++    
++    public void ajouteInst(NasmInst inst){
++	if(inst instanceof NasmMov && inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress){
++	    NasmRegister newReg = newRegister();
++	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment)); 
++	    this.sectionText.add(new NasmMov(null, inst.destination, newReg, "on passe par un registre temporaire"));
++	    return;
++	}
++	
++	//	if(inst instanceof NasmCmp && inst.destination instanceof NasmConstant && inst.source instanceof NasmConstant){
++	if(inst instanceof NasmCmp
++	   && (inst.destination instanceof NasmConstant
++	       || (inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress))){
++		NasmRegister newReg = newRegister();
++		this.sectionText.add(new NasmMov(inst.label, newReg, inst.destination, inst.comment)); 
++		this.sectionText.add(new NasmCmp(null, newReg, inst.source, "on passe par un registre temporaire"));
++		return;
++	    }
++	
++	this.sectionText.add(inst);
++    }
++
++    public NasmRegister newRegister(){
++	return new NasmRegister(tempCounter++);
++    }
++
++    public void populateSectionBss(Ts tableGlobale){
++	ajoutePseudoInst(new NasmResb(new NasmLabel("sinput"), 255, "reserve a 255 byte space in memory for the users input string"));
++	Set< Map.Entry< String, TsItemVar> > st = tableGlobale.variables.entrySet();    
++	for (Map.Entry< String, TsItemVar> me:st){
++	    TsItemVar tsItem = me.getValue(); 
++	    String identif = me.getKey();
++	    ajoutePseudoInst(new NasmResd(new NasmLabel(identif), tsItem.taille*4, "variable globale"));
++	}
++    }
++
++
++    public void affichePreNasm(String baseFileName){
++	String fileName;
++	PrintStream out = System.out;
++
++	if (baseFileName != null){
++	    try {
++		baseFileName = baseFileName;
++		fileName = baseFileName + ".pre-nasm";
++		out = new PrintStream(fileName);
++	    }
++	    
++	    catch (IOException e) {
++		System.err.println("Error: " + e.getMessage());
++	    }
++	}
++	affiche(out);
++    }
++
++    public void afficheNasm(String baseFileName){
++	String fileName;
++	PrintStream out = System.out;
++
++	if (baseFileName != null){
++	    try {
++		baseFileName = baseFileName;
++		fileName = baseFileName + ".nasm";
++		out = new PrintStream(fileName);
++	    }
++	    
++	    catch (IOException e) {
++		System.err.println("Error: " + e.getMessage());
++	    }
++	}
++	affiche(out);
++    }
++
++    public void affiche(PrintStream out){
++	out.println("%include\t'io.asm'\n");
++	out.println("section\t.bss");
++    	Iterator<NasmPseudoInst> iter = this.sectionBss.iterator();
++    	while(iter.hasNext()){
++    	    out.println(iter.next());
++    	}
++	
++	out.println("\nsection\t.text");
++	out.println("global _start");
++	out.println("_start:");
++    	Iterator<NasmInst> iter2 = this.sectionText.iterator();
++    	while(iter2.hasNext()){
++    	    out.println(iter2.next());
++    	}
++    }
++}
++/*
++    public void affichePreambule(PrintStream out)
++    {
++	out.println("%include\t'io.asm'\n");
++	out.println("section\t.bss");
++	out.println("sinput:\tresb\t255\t;reserve a 255 byte space in memory for the users input string");
++
++
++	Set< Map.Entry< String, TsItemVar> > st = tableGlobale.variables.entrySet();    
++	for (Map.Entry< String, TsItemVar> me:st){
++	    TsItemVar tsItem = me.getValue(); 
++	    String identif = me.getKey();
++	    out.println(identif + " :\tresd\t" + tsItem.taille * 4);
++	}
++	out.println("\nsection\t.text");
++	out.println("global _start");
++	out.println("_start:");
++    }
++
++
++    */
+Index: src/nasm/NasmInt.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmInt.java b/src/nasm/NasmInt.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmInt.java	(date 1648406087000)
+@@ -0,0 +1,18 @@
++package nasm;
++
++public class NasmInt extends NasmInst {
++    
++    public NasmInt(NasmOperand label, String comment){
++	this.label = label;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "int 0x80", null, null, this.comment);
++    }
++
++}
+Index: src/ts/Sa2ts.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ts/Sa2ts.java b/src/Sa2ts.java
+rename from src/ts/Sa2ts.java
+rename to src/Sa2ts.java
+--- a/src/ts/Sa2ts.java	(revision c3cfa6d7cea8d06c1964cf1a26b026c0963c8a5a)
++++ b/src/Sa2ts.java	(date 1648740192306)
+@@ -1,6 +1,6 @@
+-package ts;
+-
+ import sa.*;
++import ts.Ts;
++import ts.TsItemVar;
+ 
+ public class Sa2ts extends SaDepthFirstVisitor<Void> {
+ 
+@@ -12,9 +12,6 @@
+     private Context context;
+ 
+ 
+-
+-
+-
+     public Sa2ts(SaNode root) {
+         tableGlobale = new Ts();
+         context= Context.GLOBAL;
+Index: src/nasm/NasmJle.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmJle.java b/src/nasm/NasmJle.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmJle.java	(date 1648406087000)
+@@ -0,0 +1,25 @@
++package nasm;
++
++public class NasmJle extends NasmInst {
++    
++    public NasmJle(NasmOperand label, NasmOperand address, String comment){
++	this.label = label;
++	this.address = address;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	//	String formatInst
++	//	addLabel(label);
++
++	//return formatInst;
++
++	
++	return super.formatInst(this.label, "jle", this.address, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmRet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmRet.java b/src/nasm/NasmRet.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmRet.java	(date 1648406087000)
+@@ -0,0 +1,18 @@
++package nasm;
++
++public class NasmRet extends NasmInst {
++    
++    public NasmRet(NasmOperand label, String comment){
++	this.label = label;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "ret", null, null, this.comment);
++    }
++
++}
+Index: src/C3a2nasm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/C3a2nasm.java b/src/C3a2nasm.java
+new file mode 100644
+--- /dev/null	(date 1648738538705)
++++ b/src/C3a2nasm.java	(date 1648738538705)
+@@ -0,0 +1,179 @@
++package nasm;
++import ts.*;
++import c3a.*;
++
++public class C3a2nasm implements C3aVisitor <NasmOperand> {
++    private C3a c3a;
++    private Nasm nasm;
++    private Ts tableGlobale;
++    private TsItemFct currentFct;
++    private NasmRegister esp;
++    private NasmRegister ebp;
++
++
++    public C3a2nasm(C3a c3a, Ts tableGlobale){
++	this.c3a = c3a;
++	nasm = new Nasm(tableGlobale);
++	nasm.setTempCounter(c3a.getTempCounter());
++	System.out.println("temp counter nb " + nasm.getTempCounter());
++
++	this.tableGlobale = tableGlobale;
++	this.currentFct = null;
++	esp = new NasmRegister(-1);
++	esp.colorRegister(Nasm.REG_ESP);
++
++	ebp = new NasmRegister(-1);
++	ebp.colorRegister(Nasm.REG_EBP);
++
++	NasmOperand res;
++	for(C3aInst c3aInst : c3a.listeInst){
++	    //	   	    System.out.println("<" + c3aInst.getClass().getSimpleName() + ">");
++	    res = c3aInst.accept(this);
++	}
++	System.out.println("temp counter nb " + nasm.getTempCounter());
++    }
++
++    public Nasm getNasm(){return nasm;}
++
++    /*--------------------------------------------------------------------------------------------------------------
++      transforme une opérande trois adresses en une opérande asm selon les règles suivantes :
++
++      C3aConstant -> NasmConstant
++      C3aTemp     -> NasmRegister
++      C3aLabel    -> NasmLabel
++      C3aFunction -> NasmLabel
++      C3aVar      -> NasmAddress
++      --------------------------------------------------------------------------------------------------------------*/
++
++    public NasmOperand visit(C3aConstant oper)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aLabel oper)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aTemp oper)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aVar oper)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aFunction oper)
++    {
++	return null;
++    }
++
++
++
++    /*--------------------------------------------------------------------------------------------------------------*/
++
++
++    public NasmOperand visit(C3aInstAdd inst)
++    {
++	NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
++	nasm.ajouteInst(new NasmMov(label, inst.result.accept(this), inst.op1.accept(this), ""));
++	nasm.ajouteInst(new NasmAdd(null , inst.result.accept(this), inst.op2.accept(this), ""));
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstSub inst)
++    {
++        NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
++        nasm.ajouteInst(new NasmMov(label, inst.result.accept(this), inst.op1.accept(this), ""));
++        nasm.ajouteInst(new NasmSub(null , inst.result.accept(this), inst.op2.accept(this), ""));
++        return null;
++}
++
++    public NasmOperand visit(C3aInstMult inst)
++    {
++        NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
++        nasm.ajouteInst(new NasmMov(label, inst.result.accept(this), inst.op1.accept(this), ""));
++        nasm.ajouteInst(new NasmMul(null , inst.result.accept(this), inst.op2.accept(this), ""));
++        return null;
++}
++
++    public NasmOperand visit(C3aInstDiv inst)
++    {
++	return null;
++}
++
++
++    public NasmOperand visit(C3aInstCall inst)
++    {
++	return null;
++}
++
++    public NasmOperand visit(C3aInstFBegin inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInst inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstJumpIfLess inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstRead inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstAffect inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstFEnd inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstJumpIfEqual inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstJumpIfNotEqual inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstJump inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstParam inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstReturn inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstWrite inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstStop inst)
++    {
++	return null;
++    }
++
++}
++
+Index: src/nasm/NasmOr.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmOr.java b/src/nasm/NasmOr.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmOr.java	(date 1648406087000)
+@@ -0,0 +1,24 @@
++package nasm;
++
++public class NasmOr extends NasmInst {
++    
++    public NasmOr(NasmOperand label, NasmOperand destination, NasmOperand source, String comment){
++	destUse = true;
++	destDef = true;
++	srcUse = true;
++	this.label = label;
++	this.destination = destination;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "or", this.destination, this.source, this.comment);
++    }
++
++
++}
+Index: src/c3a/Sa2C3a.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/c3a/Sa2C3a.java b/src/Sa2C3a.java
+rename from src/c3a/Sa2C3a.java
+rename to src/Sa2C3a.java
+--- a/src/c3a/Sa2C3a.java	(revision c3cfa6d7cea8d06c1964cf1a26b026c0963c8a5a)
++++ b/src/Sa2C3a.java	(date 1648740166330)
+@@ -1,4 +1,4 @@
+-package c3a;
++import c3a.*;
+ import ts.*;
+ import sa.*;
+ 
+@@ -6,18 +6,12 @@
+ public class Sa2C3a extends SaDepthFirstVisitor <C3aOperand> {
+     private C3a c3a;
+     int indentation;
+-
+-    public C3a getC3a() {
+-        return this.c3a;
+-    }
+-
++    public C3a getC3a(){return this.c3a;}
+     Ts tableGlobale;
+ 
+-
+-    public Sa2C3a(SaNode root, Ts tableGlobale) {
++    public Sa2C3a(SaNode root, Ts tableGlobale){
+         c3a = new C3a();
+         C3aTemp result = c3a.newTemp();
+-        this.tableGlobale = tableGlobale;
+         C3aFunction fct = new C3aFunction(tableGlobale.getFct("main"));
+         c3a.ajouteInst(new C3aInstCall(fct, result, ""));
+         c3a.ajouteInst(new C3aInstStop(result, ""));
+@@ -25,38 +19,42 @@
+         root.accept(this);
+     }
+ 
+-    public void defaultIn(SaNode node) {
+-        for (int i = 0; i < indentation; i++) {
+-            System.out.print(" ");
+-        }
++    public void defaultIn(SaNode node)
++    {
++        for(int i = 0; i < indentation; i++){System.out.print(" ");}
+         indentation++;
+         System.out.println("<" + node.getClass().getSimpleName() + ">");
+     }
+ 
+-    public void defaultOut(SaNode node) {
++    public void defaultOut(SaNode node)
++    {
+         indentation--;
+-        for (int i = 0; i < indentation; i++) {
+-            System.out.print(" ");
+-        }
++        for(int i = 0; i < indentation; i++){System.out.print(" ");}
+         System.out.println("</" + node.getClass().getSimpleName() + ">");
+     }
+ 
++
+     public C3aOperand visit(SaProg node) {
+         node.getFonctions().accept(this);
+         return null;
+     }
++
++
++
+     @Override
+     public C3aOperand visit(SaExp node) {
+         node.accept(this);
+         return null;
+     }
+ 
+-    @Override
++
++   @Override
+     public C3aOperand visit(SaExpAppel node) {
+         defaultIn(node);
+-        C3aOperand appel = node.getVal().accept(this);
++        C3aOperand call = node.getVal().accept(this);
+         defaultOut(node);
+-        return appel;
++        return call;
++
+     }
+ 
+     @Override
+@@ -99,20 +97,17 @@
+     }
+ 
+ 
+-    @Override
++   @Override
+     public C3aOperand visit(SaAppel node) {
+ 
+-        SaLExp args = node.getArguments();
+-        SaExp arg;
++        defaultIn(node);
++        node.getArguments().accept(this);
++        C3aFunction function = new C3aFunction(this.tableGlobale.getFct(node.getNom()));
+         C3aOperand result = c3a.newTemp();
+-        int i;
+-        while (args != null) {
+-            arg = args.getTete();
+-            args = args.getQueue();
+-            c3a.ajouteInst(new C3aInstParam(arg.accept(this), ""));
+-        }
+-        c3a.ajouteInst(new C3aInstCall(new C3aFunction(node.tsItem), result, ""));
+-        return result;
++        C3aInstCall  call = new C3aInstCall(function,result,"");
++        c3a.ajouteInst(call);
++       defaultOut(node);
++       return result;
+     }
+ 
+ 
+Index: src/nasm/NasmAdd.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmAdd.java b/src/nasm/NasmAdd.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmAdd.java	(date 1648406087000)
+@@ -0,0 +1,24 @@
++package nasm;
++
++public class NasmAdd extends NasmInst {
++    
++    public NasmAdd(NasmOperand label, NasmOperand destination, NasmOperand source, String comment){
++	destUse = true;
++	destDef = true;
++	srcUse = true;
++	this.label = label;
++	this.destination = destination;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "add", this.destination, this.source, this.comment);
++    }
++
++
++}
+Index: src/nasm/NasmJne.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmJne.java b/src/nasm/NasmJne.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmJne.java	(date 1648406087000)
+@@ -0,0 +1,19 @@
++package nasm;
++
++public class NasmJne extends NasmInst {
++    
++    public NasmJne(NasmOperand label, NasmOperand address, String comment){
++	this.label = label;
++	this.address = address;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "jne", this.address, null, this.comment);
++    }
++
++}
+Index: src/Compiler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import c3a.C3a;\nimport c3a.Sa2C3a;\nimport c3a.Sa2c3a;\nimport sa.Sa2Xml;\nimport sa.SaNode;\nimport sa.SaProg;\nimport sc.parser.*;\nimport sc.lexer.*;\nimport sc.node.*;\nimport ts.Ts;\n\nimport java.io.*;\n//import sa.*;\n//import ts.*;\n//import c3a.*;\n//import nasm.*;\n//import fg.*;\n//import ig.*;\n\n\npublic class Compiler\n{\n    public static void main(String[] args)\n    {\n     PushbackReader br = null;\n     String baseName = null;\n     String inputFileName = null;\n     int verboseLevel = 0;\n\t\n\tfor (int i = 0; i < args.length; i++) {\n\t    if(args[i].equals(\"-v\")){\n\t\tverboseLevel = Integer.parseInt(args[++i]);\n\t    }\n\t    else{\n\t\tinputFileName = args[i];\n\t    }\n\t}\n\t\n\tif(inputFileName == null){\n\t    System.out.println(\"java Compiler input_file -v verbose_level\");\n\t    System.exit(1);\n\t}\n\t\n\ttry {\n\t    br = new PushbackReader(new FileReader(inputFileName));\n\t    baseName = removeSuffix(inputFileName, \".l\");\n\t}\n\tcatch (IOException e) {\n\t    e.printStackTrace();\n\t} \n\ttry {\n\t    Parser p = new Parser(new Lexer(br));\n\t    System.out.println(\"[BUILD SC] \");\n\t    Start tree = p.parse();\n\t    \n\t    if(verboseLevel > 1){\n\t\tSystem.out.println(\"[PRINT SC]\");\n\t\ttree.apply(new Sc2Xml(baseName));\n\t    }\n\t    \n\t    System.out.println(\"[BUILD SA] \");\n\t    Sc2sa sc2sa = new Sc2sa();\n\t    tree.apply(sc2sa);\n\t    SaNode saRoot = sc2sa.getRoot();\n\n\n\n\t   if(verboseLevel > 1){\n\t\tSystem.out.println(\"[PRINT SA]\");\n\t\tnew Sa2Xml(saRoot, baseName);\n\t    }\n\t    \n\t    System.out.println(\"[BUILD TS] \");\n\t    Ts tableGlobale = new ts.Sa2ts((SaProg) saRoot).getTableGlobale();\n\n\t    if(verboseLevel > 1){\n\t\tSystem.out.println(\"[PRINT TS]\");\n\t\ttableGlobale.afficheTout(baseName);\n\t    }\n\n\n\n\t    System.out.println(\"[BUILD C3A] \");\n\t    C3a c3a = new Sa2C3a(saRoot, tableGlobale).getC3a();\n\n\t    if(verboseLevel > 1){\n\t\tSystem.out.println(\"[PRINT C3A] \");\n\t\tc3a.affiche(baseName);\n\t    }\n\t    \n\t    /*System.out.println(\"[BUILD PRE NASM] \");\n\t    Nasm nasm = new C3a2nasm(c3a, tableGlobale).getNasm();\n\t    if(verboseLevel > 1){\n\t\tSystem.out.println(\"[PRINT PRE NASM] \");\n\t\tnasm.affichePreNasm(baseName);\n\t    }\n\t    \n\t    System.out.println(\"[BUILD FG] \");\n\t    Fg fg = new Fg(nasm);\n\t\t\n\t    if(verboseLevel > 1){\n\t\tSystem.out.println(\"[PRINT FG] \");\n\t\tfg.affiche(baseName);\n\t    }\n\t\t\n\t    System.out.println(\"[SOLVE FG]\");\n\t    FgSolution fgSolution = new FgSolution(nasm, fg);\n\t    if(verboseLevel > 1){\n\t\tSystem.out.println(\"[PRINT FG SOLUTION] \");\n\t\tfgSolution.affiche(baseName);\n\t    }\t    \n\t    System.out.println(\"[BUILD IG] \");\n\t    Ig ig = new Ig(fgSolution);\n\t    \n\t    if(verboseLevel > 1){\n\t\tSystem.out.println(\"[PRINT IG] \");\n\t\tig.affiche(baseName);\n\t    }\n\t    \n\t    System.out.println(\"[ALLOCATE REGISTERS]\");\n\t    ig.allocateRegisters();\n\t\t\t\t\n\t    System.out.println(\"[PRINT NASM]\");\n\t    nasm.afficheNasm(baseName);*/\n\n\n\t}\n\tcatch(Exception e){\n\t    e.printStackTrace();\n\t    System.out.println(e.getMessage());\n\t    System.exit(1);\n\t}\n    }\n\n\n    public static String removeSuffix(final String s, final String suffix)\n    {\n\tif (s != null && suffix != null && s.endsWith(suffix)){\n\t    return s.substring(0, s.length() - suffix.length());\n\t}\n\treturn s;\n    }\n    \n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Compiler.java b/src/Compiler.java
+--- a/src/Compiler.java	(revision c3cfa6d7cea8d06c1964cf1a26b026c0963c8a5a)
++++ b/src/Compiler.java	(date 1648740176570)
+@@ -1,144 +1,133 @@
+ import c3a.C3a;
+-import c3a.Sa2C3a;
+-import c3a.Sa2c3a;
++import nasm.C3a2nasm;
++import nasm.Nasm;
+ import sa.Sa2Xml;
+ import sa.SaNode;
+-import sa.SaProg;
+ import sc.parser.*;
+ import sc.lexer.*;
+ import sc.node.*;
+ import ts.Ts;
+-
+ import java.io.*;
+-//import sa.*;
+-//import ts.*;
+-//import c3a.*;
+-//import nasm.*;
+-//import fg.*;
+-//import ig.*;
++
++
+ 
+ 
+ public class Compiler
+ {
+-    public static void main(String[] args)
+-    {
+-     PushbackReader br = null;
+-     String baseName = null;
+-     String inputFileName = null;
+-     int verboseLevel = 0;
+-	
+-	for (int i = 0; i < args.length; i++) {
+-	    if(args[i].equals("-v")){
+-		verboseLevel = Integer.parseInt(args[++i]);
+-	    }
+-	    else{
+-		inputFileName = args[i];
+-	    }
+-	}
+-	
+-	if(inputFileName == null){
+-	    System.out.println("java Compiler input_file -v verbose_level");
+-	    System.exit(1);
+-	}
+-	
+-	try {
+-	    br = new PushbackReader(new FileReader(inputFileName));
+-	    baseName = removeSuffix(inputFileName, ".l");
+-	}
+-	catch (IOException e) {
+-	    e.printStackTrace();
+-	} 
+-	try {
+-	    Parser p = new Parser(new Lexer(br));
+-	    System.out.println("[BUILD SC] ");
+-	    Start tree = p.parse();
+-	    
+-	    if(verboseLevel > 1){
+-		System.out.println("[PRINT SC]");
+-		tree.apply(new Sc2Xml(baseName));
+-	    }
+-	    
+-	    System.out.println("[BUILD SA] ");
+-	    Sc2sa sc2sa = new Sc2sa();
+-	    tree.apply(sc2sa);
+-	    SaNode saRoot = sc2sa.getRoot();
++	public static void main(String[] args)
++	{
++		PushbackReader br = null;
++		String baseName = null;
++		String inputFileName = null;
++		int verboseLevel = 0;
++
++		for (int i = 0; i < args.length; i++) {
++			if(args[i].equals("-v")){
++				verboseLevel = Integer.parseInt(args[++i]);
++			}
++			else{
++				inputFileName = args[i];
++			}
++		}
++
++		if(inputFileName == null){
++			System.out.println("java Compiler input_file -v verbose_level");
++			System.exit(1);
++		}
++
++		try {
++			br = new PushbackReader(new FileReader(inputFileName));
++			baseName = removeSuffix(inputFileName, ".l");
++		}
++		catch (IOException e) {
++			e.printStackTrace();
++		}
++		try {
++			Parser p = new Parser(new Lexer(br));
++			System.out.println("[BUILD SC] ");
++			Start tree = p.parse();
++
++			if(verboseLevel > 1){
++				System.out.println("[PRINT SC]");
++				tree.apply(new Sc2Xml(baseName));
++			}
++
++			System.out.println("[BUILD SA] ");
++			Sc2sa sc2sa = new Sc2sa();
++			tree.apply(sc2sa);
++			SaNode saRoot = sc2sa.getRoot();
+ 
+-
+-
+-	   if(verboseLevel > 1){
+-		System.out.println("[PRINT SA]");
+-		new Sa2Xml(saRoot, baseName);
+-	    }
+-	    
+-	    System.out.println("[BUILD TS] ");
+-	    Ts tableGlobale = new ts.Sa2ts((SaProg) saRoot).getTableGlobale();
++			if(verboseLevel > 1){
++				System.out.println("[PRINT SA]");
++				new Sa2Xml(saRoot, baseName);
++			}
++
++			System.out.println("[BUILD TS] ");
++			Ts tableGlobale = new Sa2ts(saRoot).getTableGlobale();
+ 
+-	    if(verboseLevel > 1){
+-		System.out.println("[PRINT TS]");
+-		tableGlobale.afficheTout(baseName);
+-	    }
++			if(verboseLevel > 1){
++				System.out.println("[PRINT TS]");
++				tableGlobale.afficheTout(baseName);
++			}
+ 
+-
+-
+-	    System.out.println("[BUILD C3A] ");
+-	    C3a c3a = new Sa2C3a(saRoot, tableGlobale).getC3a();
++			System.out.println("[BUILD C3A] ");
++			C3a c3a = new Sa2C3a(saRoot, tableGlobale).getC3a();
+ 
+-	    if(verboseLevel > 1){
+-		System.out.println("[PRINT C3A] ");
+-		c3a.affiche(baseName);
+-	    }
+-	    
+-	    /*System.out.println("[BUILD PRE NASM] ");
+-	    Nasm nasm = new C3a2nasm(c3a, tableGlobale).getNasm();
+-	    if(verboseLevel > 1){
+-		System.out.println("[PRINT PRE NASM] ");
+-		nasm.affichePreNasm(baseName);
+-	    }
+-	    
++			if(verboseLevel > 1){
++				System.out.println("[PRINT C3A] ");
++				c3a.affiche(baseName);
++			}
++
++			System.out.println("[BUILD PRE NASM] ");
++			Nasm nasm = new C3a2nasm(c3a, tableGlobale).getNasm();
++			if(verboseLevel > 1){
++				System.out.println("[PRINT PRE NASM] ");
++				nasm.affichePreNasm(baseName);
++			}
++	    /*
+ 	    System.out.println("[BUILD FG] ");
+ 	    Fg fg = new Fg(nasm);
+-		
++
+ 	    if(verboseLevel > 1){
+ 		System.out.println("[PRINT FG] ");
+ 		fg.affiche(baseName);
+ 	    }
+-		
++
+ 	    System.out.println("[SOLVE FG]");
+ 	    FgSolution fgSolution = new FgSolution(nasm, fg);
+ 	    if(verboseLevel > 1){
+ 		System.out.println("[PRINT FG SOLUTION] ");
+ 		fgSolution.affiche(baseName);
+-	    }	    
++	    }
+ 	    System.out.println("[BUILD IG] ");
+ 	    Ig ig = new Ig(fgSolution);
+-	    
++
+ 	    if(verboseLevel > 1){
+ 		System.out.println("[PRINT IG] ");
+ 		ig.affiche(baseName);
+ 	    }
+-	    
++
+ 	    System.out.println("[ALLOCATE REGISTERS]");
+ 	    ig.allocateRegisters();
+-				
++
+ 	    System.out.println("[PRINT NASM]");
+-	    nasm.afficheNasm(baseName);*/
+-
+-
+-	}
+-	catch(Exception e){
+-	    e.printStackTrace();
+-	    System.out.println(e.getMessage());
+-	    System.exit(1);
+-	}
+-    }
++	    nasm.afficheNasm(baseName);
++	    */
++		}
++		catch(Exception e){
++			e.printStackTrace();
++			System.out.println(e.getMessage());
++			System.exit(1);
++		}
++	}
+ 
+ 
+-    public static String removeSuffix(final String s, final String suffix)
+-    {
+-	if (s != null && suffix != null && s.endsWith(suffix)){
+-	    return s.substring(0, s.length() - suffix.length());
+-	}
+-	return s;
+-    }
+-    
++	public static String removeSuffix(final String s, final String suffix)
++	{
++		if (s != null && suffix != null && s.endsWith(suffix)){
++			return s.substring(0, s.length() - suffix.length());
++		}
++		return s;
++	}
++
+ }
+Index: src/nasm/NasmResd.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmResd.java b/src/nasm/NasmResd.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmResd.java	(date 1648406087000)
+@@ -0,0 +1,21 @@
++package nasm;
++
++public class NasmResd extends NasmPseudoInst {
++    
++    public NasmResd(NasmLabel label, int nb, String comment){
++	this.label = label;
++	this.nb = nb;
++	this.sizeInBytes = 4;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "resd", this.nb, this.comment);
++    }
++
++
++}
+Index: src/nasm/NasmPseudoInst.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmPseudoInst.java b/src/nasm/NasmPseudoInst.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmPseudoInst.java	(date 1648406087000)
+@@ -0,0 +1,28 @@
++package nasm;
++
++public abstract class NasmPseudoInst{
++    public NasmLabel label = null;
++    public int nb = 1;
++    public int sizeInBytes;
++    String comment;
++    
++    void addLabel(String formatInst, NasmOperand label){
++	formatInst += label;
++    }
++    
++    public String formatInst(NasmOperand label, String opcode, int nb, String comment){
++	String s = "";
++	if(label != null)
++	    s = s + label + " :";
++	s = s + "\t" + opcode;
++	s = s + "\t" + nb;
++	if(comment != null)
++	    s = s + "\t;" + comment;
++	return s;
++    }
++
++    /*        public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++	}*/
++
++}
+Index: src/NasmVM.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/NasmVM.java b/src/NasmVM.java
+new file mode 100644
+--- /dev/null	(date 1648680395911)
++++ b/src/NasmVM.java	(date 1648680395911)
+@@ -0,0 +1,66 @@
++import ts.Ts;
++import ts.TsParser;
++import nasm.NasmParser;
++import nasm.NasmEval;
++import nasm.Nasm;
++import java.io.IOException;
++
++
++public class NasmVM {
++    private int verboseLevel;
++    private int stackSize;
++    private Nasm code;
++    private String nasmFileName;
++
++    public NasmVM(String nasmFileName, int stackSize, int verboseLevel){
++        this.nasmFileName = nasmFileName;
++        this.stackSize = stackSize;
++        this.verboseLevel = verboseLevel;
++    }
++
++    public void run() throws IOException {
++        var nasmParser = new NasmParser();
++        code = nasmParser.parse(nasmFileName);
++
++        if(verboseLevel > 0)
++            code.afficheNasm(null);
++
++        NasmEval eval = new NasmEval(code, stackSize, verboseLevel);
++        eval.displayOutput();
++    }
++
++    public static void main(String[] args){
++        int verboseLevel = 0;
++        int stackSize = 10000;
++        String nasmFileName = null;
++
++        try {
++            for (int i = 0; i < args.length; i++) {
++                if(args[i].equals("-v"))
++                    verboseLevel = Integer.parseInt(args[++i]);
++                else if(args[i].equals("-s"))
++                    stackSize = Integer.parseInt(args[++i]);
++                else if(args[i].equals("-nasm"))
++                    nasmFileName = args[++i];
++            }
++            if(nasmFileName == null){
++                System.out.println("java NasmVM -nasm nasmFile -s stackSize -v verboseLevel");
++                System.exit(1);
++            }
++            var vm = new NasmVM(nasmFileName, stackSize, verboseLevel);
++            vm.run();
++        }catch(IOException e){
++            e.printStackTrace();
++        }
++    }
++}
++
++/*
++        else{
++            var pathTab = preNasmFilePath.split("/");
++            var fileNamePreNasm = pathTab[pathTab.length - 1];
++            var fileName =  outputPath + fileNamePreNasm.substring(0, fileNamePreNasm.length()-3)+ ".out";
++            vm.displayOutput(fileName);
++        }
++    }
++*/
+Index: src/nasm/NasmCmp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmCmp.java b/src/nasm/NasmCmp.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmCmp.java	(date 1648406087000)
+@@ -0,0 +1,23 @@
++package nasm;
++
++public class NasmCmp extends NasmInst {
++    
++    public NasmCmp(NasmOperand label, NasmOperand destination, NasmOperand source, String comment){
++	destUse = true;
++	srcUse= true;
++	this.label = label;
++	this.destination = destination;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++    
++    public String toString(){
++	return super.formatInst(this.label, "cmp", this.destination, this.source, this.comment);
++    }
++
++
++}
+Index: src/nasm/NasmMul.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmMul.java b/src/nasm/NasmMul.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmMul.java	(date 1648406087000)
+@@ -0,0 +1,26 @@
++package nasm;
++
++public class NasmMul extends NasmInst {
++    public NasmMul(NasmOperand label, NasmOperand destination, NasmOperand source, String comment){
++	destUse = true;
++	destDef = true;
++	srcUse = true;
++	this.label = label;
++	this.destination = destination;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    /*    public String toString(){
++	return super.formatInst(this.label, "imul", this.source, null, this.comment);
++	}*/
++
++    public String toString(){
++	return super.formatInst(this.label, "imul", this.destination, this.source, this.comment);
++    }
++
++}
+Index: src/nasm/NasmMov.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmMov.java b/src/nasm/NasmMov.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmMov.java	(date 1648406087000)
+@@ -0,0 +1,22 @@
++package nasm;
++
++public class NasmMov extends NasmInst {
++    
++    public NasmMov(NasmOperand label, NasmOperand destination, NasmOperand source, String comment){
++	destDef = true;
++	srcUse = true;
++	this.label = label;
++	this.destination = destination;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "mov", this.destination, this.source, this.comment);
++    }
++    
++}
+Index: src/nasm/NasmJl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmJl.java b/src/nasm/NasmJl.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmJl.java	(date 1648406087000)
+@@ -0,0 +1,19 @@
++package nasm;
++
++public class NasmJl extends NasmInst {
++    
++    public NasmJl(NasmOperand label, NasmOperand address, String comment){
++	this.label = label;
++	this.address = address;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "jl", this.address, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmDiv.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmDiv.java b/src/nasm/NasmDiv.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmDiv.java	(date 1648406087000)
+@@ -0,0 +1,19 @@
++package nasm;
++
++public class NasmDiv extends NasmInst {
++    
++    public NasmDiv(NasmOperand label, NasmOperand source, String comment){
++	srcUse = true;
++	this.label = label;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	    return super.formatInst(this.label, "idiv", this.source, null, this.comment);
++	}
++}
+Index: src/nasm/NasmJmp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmJmp.java b/src/nasm/NasmJmp.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmJmp.java	(date 1648406087000)
+@@ -0,0 +1,19 @@
++package nasm;
++
++public class NasmJmp extends NasmInst {
++    
++    public NasmJmp(NasmOperand label, NasmOperand address, String comment){
++	this.label = label;
++	this.address = address;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "jmp", this.address, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmJge.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmJge.java b/src/nasm/NasmJge.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmJge.java	(date 1648406087000)
+@@ -0,0 +1,19 @@
++package nasm;
++
++public class NasmJge extends NasmInst {
++    
++    public NasmJge(NasmOperand label, NasmOperand address, String comment){
++	this.label = label;
++	this.address = address;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "jge", this.address, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmNot.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmNot.java b/src/nasm/NasmNot.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmNot.java	(date 1648406087000)
+@@ -0,0 +1,21 @@
++package nasm;
++
++public class NasmNot extends NasmInst {
++    
++    public NasmNot(NasmOperand label, NasmOperand destination, String comment){
++	destUse = true;
++	destDef = true;
++	this.label = label;
++	this.destination = destination;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "not", this.destination, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmAddress.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmAddress.java b/src/nasm/NasmAddress.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmAddress.java	(date 1648406087000)
+@@ -0,0 +1,61 @@
++package nasm;
++
++public class NasmAddress extends NasmOperand {
++
++    public NasmOperand base;
++    public NasmOperand offset;
++    public char direction;
++
++    public NasmAddress(NasmOperand base, char direction, NasmOperand offset){
++	this.base = base;
++	this.direction = direction;
++	this.offset = offset;
++    }
++
++    public NasmAddress(NasmOperand base){
++	this.base = base;
++	this.direction = '+';
++	this.offset = new NasmConstant(0);
++    }
++
++    public String toString(){
++	//	return "address";
++	if(this.offset != null)
++	    // la multiplication par 4 pour passer en octets n'est effectuée que maintenant afin de
++	    // traiter de la même façon les indices de tableaux et les adresses relatives
++	    // c'est pas terrible !
++	    //	    return "" + this.base + this.direction + "4*" + this.offset;
++	    return "" + this.base + this.direction + this.offset;
++
++	//	    return "dword [" + this.base + this.direction + "4*" + this.offset + "]";
++	return "" + this.base;
++	//	return "dword [" + this.base + "]";
++	
++    }
++
++    public boolean isGeneralRegister(){
++	return false;
++    }
++    
++    /*
++
++
++    printf("dword [");
++    nasm_affiche_operande(code_nasm, operande->u.address.base);
++    // la multiplication par 4 pour passer en octets n'est effectuée que maintenant afin de
++    // traiter de la même façon les indices de tableaux et les adresses relatives
++    // c'est pas terrible !
++    if(operande->u.address.offset){
++      printf(" %c 4 * ", operande->u.address.direction);
++      nasm_affiche_operande(code_nasm, operande->u.address.offset);
++    }
++    printf("]");
++    */
++
++    
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++
++}
+Index: src/nasm/C3a2nasm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/C3a2nasm.java b/src/nasm/C3a2nasm.java
+new file mode 100644
+--- /dev/null	(date 1648738538705)
++++ b/src/nasm/C3a2nasm.java	(date 1648738538705)
+@@ -0,0 +1,179 @@
++package nasm;
++import ts.*;
++import c3a.*;
++
++public class C3a2nasm implements C3aVisitor <NasmOperand> {
++    private C3a c3a;
++    private Nasm nasm;
++    private Ts tableGlobale;
++    private TsItemFct currentFct;
++    private NasmRegister esp;
++    private NasmRegister ebp;
++
++
++    public C3a2nasm(C3a c3a, Ts tableGlobale){
++	this.c3a = c3a;
++	nasm = new Nasm(tableGlobale);
++	nasm.setTempCounter(c3a.getTempCounter());
++	System.out.println("temp counter nb " + nasm.getTempCounter());
++
++	this.tableGlobale = tableGlobale;
++	this.currentFct = null;
++	esp = new NasmRegister(-1);
++	esp.colorRegister(Nasm.REG_ESP);
++
++	ebp = new NasmRegister(-1);
++	ebp.colorRegister(Nasm.REG_EBP);
++
++	NasmOperand res;
++	for(C3aInst c3aInst : c3a.listeInst){
++	    //	   	    System.out.println("<" + c3aInst.getClass().getSimpleName() + ">");
++	    res = c3aInst.accept(this);
++	}
++	System.out.println("temp counter nb " + nasm.getTempCounter());
++    }
++
++    public Nasm getNasm(){return nasm;}
++
++    /*--------------------------------------------------------------------------------------------------------------
++      transforme une opérande trois adresses en une opérande asm selon les règles suivantes :
++
++      C3aConstant -> NasmConstant
++      C3aTemp     -> NasmRegister
++      C3aLabel    -> NasmLabel
++      C3aFunction -> NasmLabel
++      C3aVar      -> NasmAddress
++      --------------------------------------------------------------------------------------------------------------*/
++
++    public NasmOperand visit(C3aConstant oper)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aLabel oper)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aTemp oper)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aVar oper)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aFunction oper)
++    {
++	return null;
++    }
++
++
++
++    /*--------------------------------------------------------------------------------------------------------------*/
++
++
++    public NasmOperand visit(C3aInstAdd inst)
++    {
++	NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
++	nasm.ajouteInst(new NasmMov(label, inst.result.accept(this), inst.op1.accept(this), ""));
++	nasm.ajouteInst(new NasmAdd(null , inst.result.accept(this), inst.op2.accept(this), ""));
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstSub inst)
++    {
++        NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
++        nasm.ajouteInst(new NasmMov(label, inst.result.accept(this), inst.op1.accept(this), ""));
++        nasm.ajouteInst(new NasmSub(null , inst.result.accept(this), inst.op2.accept(this), ""));
++        return null;
++}
++
++    public NasmOperand visit(C3aInstMult inst)
++    {
++        NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
++        nasm.ajouteInst(new NasmMov(label, inst.result.accept(this), inst.op1.accept(this), ""));
++        nasm.ajouteInst(new NasmMul(null , inst.result.accept(this), inst.op2.accept(this), ""));
++        return null;
++}
++
++    public NasmOperand visit(C3aInstDiv inst)
++    {
++	return null;
++}
++
++
++    public NasmOperand visit(C3aInstCall inst)
++    {
++	return null;
++}
++
++    public NasmOperand visit(C3aInstFBegin inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInst inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstJumpIfLess inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstRead inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstAffect inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstFEnd inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstJumpIfEqual inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstJumpIfNotEqual inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstJump inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstParam inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstReturn inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstWrite inst)
++    {
++	return null;
++    }
++
++    public NasmOperand visit(C3aInstStop inst)
++    {
++	return null;
++    }
++
++}
++
+Index: src/nasm/NasmJe.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmJe.java b/src/nasm/NasmJe.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmJe.java	(date 1648406087000)
+@@ -0,0 +1,19 @@
++package nasm;
++
++public class NasmJe extends NasmInst {
++    
++    public NasmJe(NasmOperand label, NasmOperand address, String comment){
++	this.label = label;
++	this.address = address;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "je", this.address, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmJg.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmJg.java b/src/nasm/NasmJg.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmJg.java	(date 1648406087000)
+@@ -0,0 +1,19 @@
++package nasm;
++
++public class NasmJg extends NasmInst {
++    
++    public NasmJg(NasmOperand label, NasmOperand address, String comment){
++	this.label = label;
++	this.address = address;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++
++    public String toString(){
++	return super.formatInst(this.label, "jg", this.address, null, this.comment);
++    }
++
++}
+Index: src/nasm/NasmSub.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmSub.java b/src/nasm/NasmSub.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmSub.java	(date 1648406087000)
+@@ -0,0 +1,22 @@
++package nasm;
++
++public class NasmSub extends NasmInst {
++    
++    public NasmSub(NasmOperand label, NasmOperand destination, NasmOperand source, String comment){
++	destUse = true;
++	destDef = true;
++	srcUse = true;
++	this.label = label;
++	this.destination = destination;
++	this.source = source;
++	this.comment = comment;
++    }
++
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++        
++    public String toString(){
++	return super.formatInst(this.label, "sub", this.destination, this.source, this.comment);
++    }
++}
+Index: src/nasm/NasmLabel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmLabel.java b/src/nasm/NasmLabel.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmLabel.java	(date 1648406087000)
+@@ -0,0 +1,15 @@
++package nasm;
++
++public class NasmLabel extends NasmOperand {
++    public String val;
++
++    public NasmLabel(String val){
++	this.val = val;
++    }
++    public String toString(){
++	return this.val;
++    }
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++}
+Index: src/nasm/NasmRegister.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/NasmRegister.java b/src/nasm/NasmRegister.java
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/NasmRegister.java	(date 1648406087000)
+@@ -0,0 +1,38 @@
++package nasm;
++
++public class NasmRegister extends NasmOperand {
++    public int val;
++    public int color = Nasm.REG_UNK;
++
++    public NasmRegister(int val){
++	this.val = val;
++    }
++
++    public void colorRegister(int color){
++	this.color = color;
++    }
++
++    public String toString(){
++	if(this.color == Nasm.REG_ESP) return "esp";
++	if(this.color == Nasm.REG_EBP) return "ebp";
++	if(this.color == Nasm.REG_EAX) return "eax";
++	if(this.color == Nasm.REG_EBX) return "ebx";
++	if(this.color == Nasm.REG_ECX) return "ecx";
++	if(this.color == Nasm.REG_EDX) return "edx";
++	else
++	    return "r" + this.val;
++    }
++
++    public boolean isGeneralRegister(){
++	if(this.color == Nasm.REG_EAX) return true;
++	if(this.color == Nasm.REG_EBX) return true;
++	if(this.color == Nasm.REG_ECX) return true;
++	if(this.color == Nasm.REG_EDX) return true;
++	if(this.color == Nasm.REG_UNK) return true;
++	return false;
++    }
++    
++    public <T> T accept(NasmVisitor <T> visitor) {
++        return visitor.visit(this);
++    }
++}
+Index: src/nasm/Nasm.old
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/nasm/Nasm.old b/src/nasm/Nasm.old
+new file mode 100644
+--- /dev/null	(date 1648406087000)
++++ b/src/nasm/Nasm.old	(date 1648406087000)
+@@ -0,0 +1,121 @@
++package nasm;
++import java.util.*;
++import java.io.*;
++import ts.*;
++    
++public class Nasm{
++    public List<NasmInst> listeInst;
++    private int tempCounter;
++    Ts tableGlobale;
++    public static int REG_EAX = 0;
++    public static int REG_EBX = 1;
++    public static int REG_ECX = 2;
++    public static int REG_EDX = 3;
++    public static int REG_ESP = -1;
++    public static int REG_EBP = -2;
++    public static int REG_UNK = -3;
++	
++
++    public Nasm(Ts tableGlobale){
++	this.tableGlobale = tableGlobale;
++	this.listeInst = new ArrayList<NasmInst>();
++
++    }
++
++    public int getTempCounter(){return this.tempCounter;}
++    public int setTempCounter(int c){return this.tempCounter = c;}
++    
++    
++    public void ajouteInst(NasmInst inst){
++	if(inst instanceof NasmMov && inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress){
++	    NasmRegister newReg = newRegister();
++	    this.listeInst.add(new NasmMov(inst.label, newReg, inst.source, inst.comment)); 
++	    this.listeInst.add(new NasmMov(null, inst.destination, newReg, "on passe par un registre temporaire"));
++	    return;
++	}
++	
++	//	if(inst instanceof NasmCmp && inst.destination instanceof NasmConstant && inst.source instanceof NasmConstant){
++	if(inst instanceof NasmCmp
++	   && (inst.destination instanceof NasmConstant
++	       || (inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress))){
++		NasmRegister newReg = newRegister();
++		this.listeInst.add(new NasmMov(inst.label, newReg, inst.destination, inst.comment)); 
++		this.listeInst.add(new NasmCmp(null, newReg, inst.source, "on passe par un registre temporaire"));
++		return;
++	    }
++	
++	this.listeInst.add(inst);
++    }
++
++    public NasmRegister newRegister(){
++	return new NasmRegister(tempCounter++);
++    }
++
++
++    public void affichePreambule(PrintStream out)
++    {
++	out.println("%include\t'io.asm'\n");
++	/* Variables globales */
++	out.println("section\t.bss");
++	out.println("sinput:\tresb\t255\t;reserve a 255 byte space in memory for the users input string");
++
++
++	Set< Map.Entry< String, TsItemVar> > st = tableGlobale.variables.entrySet();    
++	for (Map.Entry< String, TsItemVar> me:st){
++	    TsItemVar tsItem = me.getValue(); 
++	    String identif = me.getKey();
++	    out.println(identif + " :\tresd\t" + tsItem.taille * 4);
++	}
++	out.println("\nsection\t.text");
++	out.println("global _start");
++	out.println("_start:");
++    }
++
++
++    
++    public void affichePre(String baseFileName){
++	String fileName;
++	PrintStream out = System.out;
++
++	if (baseFileName != null){
++	    try {
++		baseFileName = baseFileName;
++		fileName = baseFileName + ".pre-nasm";
++		out = new PrintStream(fileName);
++	    }
++	    
++	    catch (IOException e) {
++		System.err.println("Error: " + e.getMessage());
++	    }
++	}
++    	Iterator<NasmInst> iter = this.listeInst.iterator();
++    	while(iter.hasNext()){
++    	    out.println(iter.next());
++    	}
++    }
++
++    public void affiche(String baseFileName){
++	String fileName;
++	PrintStream out = System.out;
++
++	if (baseFileName != null){
++	    try {
++		baseFileName = baseFileName;
++		fileName = baseFileName + ".nasm";
++		out = new PrintStream(fileName);
++	    }
++	    
++	    catch (IOException e) {
++		System.err.println("Error: " + e.getMessage());
++	    }
++	}
++
++	this.affichePreambule(out);
++
++	
++    	Iterator<NasmInst> iter = this.listeInst.iterator();
++    	while(iter.hasNext()){
++    	    out.println(iter.next());
++    	}
++    }
++}
+diff --git a/test/input/si3.pre-nasmout b/test/input/si3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/egal1.pre-nasmout b/test/input/egal1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/inf3.pre-nasmout b/test/input/inf3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/inf1.pre-nasmout b/test/input/inf1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/varglob1.pre-nasmout b/test/input/varglob1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/varglob3.pre-nasmout b/test/input/varglob3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/ecrire2.pre-nasmout b/test/input/ecrire2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/egal3.pre-nasmout b/test/input/egal3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/div1.pre-nasmout b/test/input/div1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/div3.pre-nasmout b/test/input/div3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/div4.pre-nasmout b/test/input/div4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/div2.pre-nasmout b/test/input/div2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio56-2.pre-nasmout b/test/input/prio56-2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio56-1.pre-nasmout b/test/input/prio56-1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/inf2.pre-nasmout b/test/input/inf2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/parenth1.pre-nasmout b/test/input/parenth1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/varglob4.pre-nasmout b/test/input/varglob4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/ecrire1.pre-nasmout b/test/input/ecrire1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/and4.pre-nasmout b/test/input/and4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio34-4.pre-nasmout b/test/input/prio34-4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/add2.pre-nasmout b/test/input/add2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/tab3.pre-nasmout b/test/input/tab3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio67-2.pre-nasmout b/test/input/prio67-2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio67-1.pre-nasmout b/test/input/prio67-1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/tab4.pre-nasmout b/test/input/tab4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/varloc1.pre-nasmout b/test/input/varloc1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/varloc2.pre-nasmout b/test/input/varloc2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/or1.pre-nasmout b/test/input/or1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio45-4.pre-nasmout b/test/input/prio45-4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio45-1.pre-nasmout b/test/input/prio45-1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/si1.pre-nasmout b/test/input/si1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/or2.pre-nasmout b/test/input/or2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/or5.pre-nasmout b/test/input/or5.pre-nasmout
+new file mode 100644
+diff --git a/test/input/mult1.pre-nasmout b/test/input/mult1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/mult2.pre-nasmout b/test/input/mult2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/si5.pre-nasmout b/test/input/si5.pre-nasmout
+new file mode 100644
+diff --git a/test/input/si4.pre-nasmout b/test/input/si4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/parenth2.pre-nasmout b/test/input/parenth2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio34-1.pre-nasmout b/test/input/prio34-1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio34-3.pre-nasmout b/test/input/prio34-3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/and3.pre-nasmout b/test/input/and3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/and5.pre-nasmout b/test/input/and5.pre-nasmout
+new file mode 100644
+diff --git a/test/input/add1.pre-nasmout b/test/input/add1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/and1.pre-nasmout b/test/input/and1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/sub1.pre-nasmout b/test/input/sub1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio23-2.pre-nasmout b/test/input/prio23-2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/sub3.pre-nasmout b/test/input/sub3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio23-1.pre-nasmout b/test/input/prio23-1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio23-4.pre-nasmout b/test/input/prio23-4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio23-3.pre-nasmout b/test/input/prio23-3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/sub2.pre-nasmout b/test/input/sub2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/not2.pre-nasmout b/test/input/not2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/not3.pre-nasmout b/test/input/not3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/affect2.pre-nasmout b/test/input/affect2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/not1.pre-nasmout b/test/input/not1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/affect1.pre-nasmout b/test/input/affect1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/egal2.pre-nasmout b/test/input/egal2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/varglob2.pre-nasmout b/test/input/varglob2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/inf4.pre-nasmout b/test/input/inf4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio34-2.pre-nasmout b/test/input/prio34-2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/and2.pre-nasmout b/test/input/and2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/tab2.pre-nasmout b/test/input/tab2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/tab1.pre-nasmout b/test/input/tab1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio45-3.pre-nasmout b/test/input/prio45-3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/prio45-2.pre-nasmout b/test/input/prio45-2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/varloc3.pre-nasmout b/test/input/varloc3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/or3.pre-nasmout b/test/input/or3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/si2.pre-nasmout b/test/input/si2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/tantque1.pre-nasmout b/test/input/tantque1.pre-nasmout
+new file mode 100644
+diff --git a/test/input/tantque2.pre-nasmout b/test/input/tantque2.pre-nasmout
+new file mode 100644
+diff --git a/test/input/or4.pre-nasmout b/test/input/or4.pre-nasmout
+new file mode 100644
+diff --git a/test/input/mult3.pre-nasmout b/test/input/mult3.pre-nasmout
+new file mode 100644
+diff --git a/test/input/varloc4.pre-nasmout b/test/input/varloc4.pre-nasmout
+new file mode 100644
