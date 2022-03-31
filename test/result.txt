@@ -1,0 +1,951 @@
+Évaluation de Diff de sa :
+84/84 correct (100.00%)
+	add1.sa            CORRECT
+	add2.sa            CORRECT
+	affect1.sa         CORRECT
+	affect2.sa         CORRECT
+	affect3.sa         CORRECT
+	and1.sa            CORRECT
+	and2.sa            CORRECT
+	and3.sa            CORRECT
+	and4.sa            CORRECT
+	and5.sa            CORRECT
+	appel-param1.sa    CORRECT
+	appel-param2.sa    CORRECT
+	appel-param3.sa    CORRECT
+	appel-retour1.sa   CORRECT
+	appel1.sa          CORRECT
+	appel2.sa          CORRECT
+	appel3.sa          CORRECT
+	div1.sa            CORRECT
+	div2.sa            CORRECT
+	div3.sa            CORRECT
+	div4.sa            CORRECT
+	ecrire1.sa         CORRECT
+	ecrire2.sa         CORRECT
+	egal1.sa           CORRECT
+	egal2.sa           CORRECT
+	egal3.sa           CORRECT
+	fibo.sa            CORRECT
+	inf1.sa            CORRECT
+	inf2.sa            CORRECT
+	inf3.sa            CORRECT
+	inf4.sa            CORRECT
+	mult1.sa           CORRECT
+	mult2.sa           CORRECT
+	mult3.sa           CORRECT
+	not1.sa            CORRECT
+	not2.sa            CORRECT
+	not3.sa            CORRECT
+	or1.sa             CORRECT
+	or2.sa             CORRECT
+	or3.sa             CORRECT
+	or4.sa             CORRECT
+	or5.sa             CORRECT
+	parenth1.sa        CORRECT
+	parenth2.sa        CORRECT
+	prio23-1.sa        CORRECT
+	prio23-2.sa        CORRECT
+	prio23-3.sa        CORRECT
+	prio23-4.sa        CORRECT
+	prio34-1.sa        CORRECT
+	prio34-2.sa        CORRECT
+	prio34-3.sa        CORRECT
+	prio34-4.sa        CORRECT
+	prio45-1.sa        CORRECT
+	prio45-2.sa        CORRECT
+	prio45-3.sa        CORRECT
+	prio45-4.sa        CORRECT
+	prio56-1.sa        CORRECT
+	prio56-2.sa        CORRECT
+	prio67-1.sa        CORRECT
+	prio67-2.sa        CORRECT
+	rec1.sa            CORRECT
+	si1.sa             CORRECT
+	si2.sa             CORRECT
+	si3.sa             CORRECT
+	si4.sa             CORRECT
+	si5.sa             CORRECT
+	sub1.sa            CORRECT
+	sub2.sa            CORRECT
+	sub3.sa            CORRECT
+	tab1.sa            CORRECT
+	tab2.sa            CORRECT
+	tab3.sa            CORRECT
+	tab4.sa            CORRECT
+	tantque1.sa        CORRECT
+	tantque2.sa        CORRECT
+	varglob1.sa        CORRECT
+	varglob2.sa        CORRECT
+	varglob3.sa        CORRECT
+	varglob4.sa        CORRECT
+	varloc1.sa         CORRECT
+	varloc2.sa         CORRECT
+	varloc3.sa         CORRECT
+	varloc4.sa         CORRECT
+	varloc5.sa         CORRECT
+Évaluation de Diff de ts :
+84/84 correct (100.00%)
+	add1.ts            CORRECT
+	add2.ts            CORRECT
+	affect1.ts         CORRECT
+	affect2.ts         CORRECT
+	affect3.ts         CORRECT
+	and1.ts            CORRECT
+	and2.ts            CORRECT
+	and3.ts            CORRECT
+	and4.ts            CORRECT
+	and5.ts            CORRECT
+	appel-param1.ts    CORRECT
+	appel-param2.ts    CORRECT
+	appel-param3.ts    CORRECT
+	appel-retour1.ts   CORRECT
+	appel1.ts          CORRECT
+	appel2.ts          CORRECT
+	appel3.ts          CORRECT
+	div1.ts            CORRECT
+	div2.ts            CORRECT
+	div3.ts            CORRECT
+	div4.ts            CORRECT
+	ecrire1.ts         CORRECT
+	ecrire2.ts         CORRECT
+	egal1.ts           CORRECT
+	egal2.ts           CORRECT
+	egal3.ts           CORRECT
+	fibo.ts            CORRECT
+	inf1.ts            CORRECT
+	inf2.ts            CORRECT
+	inf3.ts            CORRECT
+	inf4.ts            CORRECT
+	mult1.ts           CORRECT
+	mult2.ts           CORRECT
+	mult3.ts           CORRECT
+	not1.ts            CORRECT
+	not2.ts            CORRECT
+	not3.ts            CORRECT
+	or1.ts             CORRECT
+	or2.ts             CORRECT
+	or3.ts             CORRECT
+	or4.ts             CORRECT
+	or5.ts             CORRECT
+	parenth1.ts        CORRECT
+	parenth2.ts        CORRECT
+	prio23-1.ts        CORRECT
+	prio23-2.ts        CORRECT
+	prio23-3.ts        CORRECT
+	prio23-4.ts        CORRECT
+	prio34-1.ts        CORRECT
+	prio34-2.ts        CORRECT
+	prio34-3.ts        CORRECT
+	prio34-4.ts        CORRECT
+	prio45-1.ts        CORRECT
+	prio45-2.ts        CORRECT
+	prio45-3.ts        CORRECT
+	prio45-4.ts        CORRECT
+	prio56-1.ts        CORRECT
+	prio56-2.ts        CORRECT
+	prio67-1.ts        CORRECT
+	prio67-2.ts        CORRECT
+	rec1.ts            CORRECT
+	si1.ts             CORRECT
+	si2.ts             CORRECT
+	si3.ts             CORRECT
+	si4.ts             CORRECT
+	si5.ts             CORRECT
+	sub1.ts            CORRECT
+	sub2.ts            CORRECT
+	sub3.ts            CORRECT
+	tab1.ts            CORRECT
+	tab2.ts            CORRECT
+	tab3.ts            CORRECT
+	tab4.ts            CORRECT
+	tantque1.ts        CORRECT
+	tantque2.ts        CORRECT
+	varglob1.ts        CORRECT
+	varglob2.ts        CORRECT
+	varglob3.ts        CORRECT
+	varglob4.ts        CORRECT
+	varloc1.ts         CORRECT
+	varloc2.ts         CORRECT
+	varloc3.ts         CORRECT
+	varloc4.ts         CORRECT
+	varloc5.ts         CORRECT
+Évaluation de Execution de sa :
+82/84 correct ( 97.62%)
+	add1.saout            CORRECT
+	add2.saout            CORRECT
+	affect1.saout         CORRECT
+	affect2.saout         CORRECT
+	affect3.saout         CORRECT
+	and1.saout            CORRECT
+	and2.saout            CORRECT
+	and3.saout            CORRECT
+	and4.saout            CORRECT
+	and5.saout            CORRECT
+	appel-param1.saout    CORRECT
+	appel-param2.saout    CORRECT
+	appel-param3.saout    CORRECT
+	appel-retour1.saout   CORRECT
+	appel1.saout          CORRECT
+	appel2.saout          CORRECT
+	appel3.saout          CORRECT
+	div1.saout            CORRECT
+	div2.saout            CORRECT
+	div3.saout            CORRECT
+	div4.saout            CORRECT
+	ecrire1.saout         CORRECT
+	ecrire2.saout         CORRECT
+	egal1.saout           CORRECT
+	egal2.saout           CORRECT
+	egal3.saout           CORRECT
+	inf1.saout            CORRECT
+	inf2.saout            CORRECT
+	inf3.saout            CORRECT
+	inf4.saout            CORRECT
+	mult1.saout           CORRECT
+	mult2.saout           CORRECT
+	mult3.saout           CORRECT
+	not1.saout            CORRECT
+	not2.saout            CORRECT
+	not3.saout            CORRECT
+	or1.saout             CORRECT
+	or2.saout             CORRECT
+	or3.saout             CORRECT
+	or4.saout             CORRECT
+	or5.saout             CORRECT
+	parenth1.saout        CORRECT
+	parenth2.saout        CORRECT
+	prio23-1.saout        CORRECT
+	prio23-2.saout        CORRECT
+	prio23-3.saout        CORRECT
+	prio23-4.saout        CORRECT
+	prio34-1.saout        CORRECT
+	prio34-2.saout        CORRECT
+	prio34-3.saout        CORRECT
+	prio34-4.saout        CORRECT
+	prio45-1.saout        CORRECT
+	prio45-2.saout        CORRECT
+	prio45-3.saout        CORRECT
+	prio45-4.saout        CORRECT
+	prio56-1.saout        CORRECT
+	prio56-2.saout        CORRECT
+	prio67-1.saout        CORRECT
+	prio67-2.saout        CORRECT
+	si1.saout             CORRECT
+	si2.saout             CORRECT
+	si3.saout             CORRECT
+	si4.saout             CORRECT
+	si5.saout             CORRECT
+	sub1.saout            CORRECT
+	sub2.saout            CORRECT
+	sub3.saout            CORRECT
+	tab1.saout            CORRECT
+	tab2.saout            CORRECT
+	tab3.saout            CORRECT
+	tab4.saout            CORRECT
+	tantque1.saout        CORRECT
+	tantque2.saout        CORRECT
+	varglob1.saout        CORRECT
+	varglob2.saout        CORRECT
+	varglob3.saout        CORRECT
+	varglob4.saout        CORRECT
+	varloc1.saout         CORRECT
+	varloc2.saout         CORRECT
+	varloc3.saout         CORRECT
+	varloc4.saout         CORRECT
+	varloc5.saout         CORRECT
+	fibo.saout   INCORRECT
+	rec1.saout   INCORRECT
+Évaluation de Diff de c3a :
+67/84 correct ( 79.76%)
+	add1.c3a       CORRECT
+	add2.c3a       CORRECT
+	affect1.c3a    CORRECT
+	affect2.c3a    CORRECT
+	and1.c3a       CORRECT
+	and2.c3a       CORRECT
+	and3.c3a       CORRECT
+	and4.c3a       CORRECT
+	and5.c3a       CORRECT
+	div1.c3a       CORRECT
+	div2.c3a       CORRECT
+	div3.c3a       CORRECT
+	div4.c3a       CORRECT
+	ecrire1.c3a    CORRECT
+	ecrire2.c3a    CORRECT
+	egal1.c3a      CORRECT
+	egal2.c3a      CORRECT
+	egal3.c3a      CORRECT
+	inf1.c3a       CORRECT
+	inf2.c3a       CORRECT
+	inf3.c3a       CORRECT
+	mult1.c3a      CORRECT
+	mult2.c3a      CORRECT
+	mult3.c3a      CORRECT
+	not1.c3a       CORRECT
+	not2.c3a       CORRECT
+	not3.c3a       CORRECT
+	or1.c3a        CORRECT
+	or2.c3a        CORRECT
+	or3.c3a        CORRECT
+	or4.c3a        CORRECT
+	parenth1.c3a   CORRECT
+	parenth2.c3a   CORRECT
+	prio23-1.c3a   CORRECT
+	prio23-2.c3a   CORRECT
+	prio23-3.c3a   CORRECT
+	prio23-4.c3a   CORRECT
+	prio34-1.c3a   CORRECT
+	prio34-2.c3a   CORRECT
+	prio34-3.c3a   CORRECT
+	prio34-4.c3a   CORRECT
+	prio45-1.c3a   CORRECT
+	prio45-2.c3a   CORRECT
+	prio56-1.c3a   CORRECT
+	prio56-2.c3a   CORRECT
+	si1.c3a        CORRECT
+	si2.c3a        CORRECT
+	si3.c3a        CORRECT
+	si4.c3a        CORRECT
+	si5.c3a        CORRECT
+	sub1.c3a       CORRECT
+	sub2.c3a       CORRECT
+	sub3.c3a       CORRECT
+	tab1.c3a       CORRECT
+	tab2.c3a       CORRECT
+	tab3.c3a       CORRECT
+	tab4.c3a       CORRECT
+	tantque1.c3a   CORRECT
+	tantque2.c3a   CORRECT
+	varglob1.c3a   CORRECT
+	varglob2.c3a   CORRECT
+	varglob3.c3a   CORRECT
+	varglob4.c3a   CORRECT
+	varloc1.c3a    CORRECT
+	varloc2.c3a    CORRECT
+	varloc3.c3a    CORRECT
+	varloc4.c3a    CORRECT
+	inf4.c3a       INCORRECT
+	or5.c3a        INCORRECT
+	prio45-3.c3a   INCORRECT
+	prio45-4.c3a   INCORRECT
+	prio67-1.c3a   INCORRECT
+	prio67-2.c3a   INCORRECT
+	affect3.c3a         NON-EXISTANT
+	appel-param1.c3a    NON-EXISTANT
+	appel-param2.c3a    NON-EXISTANT
+	appel-param3.c3a    NON-EXISTANT
+	appel-retour1.c3a   NON-EXISTANT
+	appel1.c3a          NON-EXISTANT
+	appel2.c3a          NON-EXISTANT
+	appel3.c3a          NON-EXISTANT
+	fibo.c3a            NON-EXISTANT
+	rec1.c3a            NON-EXISTANT
+	varloc5.c3a         NON-EXISTANT
+Évaluation de Execution du c3a :
+73/84 correct ( 86.90%)
+	add1.c3aout       CORRECT
+	add2.c3aout       CORRECT
+	affect1.c3aout    CORRECT
+	affect2.c3aout    CORRECT
+	and1.c3aout       CORRECT
+	and2.c3aout       CORRECT
+	and3.c3aout       CORRECT
+	and4.c3aout       CORRECT
+	and5.c3aout       CORRECT
+	div1.c3aout       CORRECT
+	div2.c3aout       CORRECT
+	div3.c3aout       CORRECT
+	div4.c3aout       CORRECT
+	ecrire1.c3aout    CORRECT
+	ecrire2.c3aout    CORRECT
+	egal1.c3aout      CORRECT
+	egal2.c3aout      CORRECT
+	egal3.c3aout      CORRECT
+	inf1.c3aout       CORRECT
+	inf2.c3aout       CORRECT
+	inf3.c3aout       CORRECT
+	inf4.c3aout       CORRECT
+	mult1.c3aout      CORRECT
+	mult2.c3aout      CORRECT
+	mult3.c3aout      CORRECT
+	not1.c3aout       CORRECT
+	not2.c3aout       CORRECT
+	not3.c3aout       CORRECT
+	or1.c3aout        CORRECT
+	or2.c3aout        CORRECT
+	or3.c3aout        CORRECT
+	or4.c3aout        CORRECT
+	or5.c3aout        CORRECT
+	parenth1.c3aout   CORRECT
+	parenth2.c3aout   CORRECT
+	prio23-1.c3aout   CORRECT
+	prio23-2.c3aout   CORRECT
+	prio23-3.c3aout   CORRECT
+	prio23-4.c3aout   CORRECT
+	prio34-1.c3aout   CORRECT
+	prio34-2.c3aout   CORRECT
+	prio34-3.c3aout   CORRECT
+	prio34-4.c3aout   CORRECT
+	prio45-1.c3aout   CORRECT
+	prio45-2.c3aout   CORRECT
+	prio45-3.c3aout   CORRECT
+	prio45-4.c3aout   CORRECT
+	prio56-1.c3aout   CORRECT
+	prio56-2.c3aout   CORRECT
+	prio67-1.c3aout   CORRECT
+	prio67-2.c3aout   CORRECT
+	si1.c3aout        CORRECT
+	si2.c3aout        CORRECT
+	si3.c3aout        CORRECT
+	si4.c3aout        CORRECT
+	si5.c3aout        CORRECT
+	sub1.c3aout       CORRECT
+	sub2.c3aout       CORRECT
+	sub3.c3aout       CORRECT
+	tab1.c3aout       CORRECT
+	tab2.c3aout       CORRECT
+	tab3.c3aout       CORRECT
+	tab4.c3aout       CORRECT
+	tantque1.c3aout   CORRECT
+	tantque2.c3aout   CORRECT
+	varglob1.c3aout   CORRECT
+	varglob2.c3aout   CORRECT
+	varglob3.c3aout   CORRECT
+	varglob4.c3aout   CORRECT
+	varloc1.c3aout    CORRECT
+	varloc2.c3aout    CORRECT
+	varloc3.c3aout    CORRECT
+	varloc4.c3aout    CORRECT
+	affect3.c3aout         NON-EXISTANT
+	appel-param1.c3aout    NON-EXISTANT
+	appel-param2.c3aout    NON-EXISTANT
+	appel-param3.c3aout    NON-EXISTANT
+	appel-retour1.c3aout   NON-EXISTANT
+	appel1.c3aout          NON-EXISTANT
+	appel2.c3aout          NON-EXISTANT
+	appel3.c3aout          NON-EXISTANT
+	fibo.c3aout            NON-EXISTANT
+	rec1.c3aout            NON-EXISTANT
+	varloc5.c3aout         NON-EXISTANT
+Évaluation de Diff de pre-nasm :
+0/84 correct (  0.00%)
+	add1.pre-nasm       INCORRECT
+	add2.pre-nasm       INCORRECT
+	affect1.pre-nasm    INCORRECT
+	affect2.pre-nasm    INCORRECT
+	and1.pre-nasm       INCORRECT
+	and2.pre-nasm       INCORRECT
+	and3.pre-nasm       INCORRECT
+	and4.pre-nasm       INCORRECT
+	and5.pre-nasm       INCORRECT
+	div1.pre-nasm       INCORRECT
+	div2.pre-nasm       INCORRECT
+	div3.pre-nasm       INCORRECT
+	div4.pre-nasm       INCORRECT
+	ecrire1.pre-nasm    INCORRECT
+	ecrire2.pre-nasm    INCORRECT
+	egal1.pre-nasm      INCORRECT
+	egal2.pre-nasm      INCORRECT
+	egal3.pre-nasm      INCORRECT
+	inf1.pre-nasm       INCORRECT
+	inf2.pre-nasm       INCORRECT
+	inf3.pre-nasm       INCORRECT
+	inf4.pre-nasm       INCORRECT
+	mult1.pre-nasm      INCORRECT
+	mult2.pre-nasm      INCORRECT
+	mult3.pre-nasm      INCORRECT
+	not1.pre-nasm       INCORRECT
+	not2.pre-nasm       INCORRECT
+	not3.pre-nasm       INCORRECT
+	or1.pre-nasm        INCORRECT
+	or2.pre-nasm        INCORRECT
+	or3.pre-nasm        INCORRECT
+	or4.pre-nasm        INCORRECT
+	or5.pre-nasm        INCORRECT
+	parenth1.pre-nasm   INCORRECT
+	parenth2.pre-nasm   INCORRECT
+	prio23-1.pre-nasm   INCORRECT
+	prio23-2.pre-nasm   INCORRECT
+	prio23-3.pre-nasm   INCORRECT
+	prio23-4.pre-nasm   INCORRECT
+	prio34-1.pre-nasm   INCORRECT
+	prio34-2.pre-nasm   INCORRECT
+	prio34-3.pre-nasm   INCORRECT
+	prio34-4.pre-nasm   INCORRECT
+	prio45-1.pre-nasm   INCORRECT
+	prio45-2.pre-nasm   INCORRECT
+	prio45-3.pre-nasm   INCORRECT
+	prio45-4.pre-nasm   INCORRECT
+	prio56-1.pre-nasm   INCORRECT
+	prio56-2.pre-nasm   INCORRECT
+	prio67-1.pre-nasm   INCORRECT
+	prio67-2.pre-nasm   INCORRECT
+	si1.pre-nasm        INCORRECT
+	si2.pre-nasm        INCORRECT
+	si3.pre-nasm        INCORRECT
+	si4.pre-nasm        INCORRECT
+	si5.pre-nasm        INCORRECT
+	sub1.pre-nasm       INCORRECT
+	sub2.pre-nasm       INCORRECT
+	sub3.pre-nasm       INCORRECT
+	tab1.pre-nasm       INCORRECT
+	tab2.pre-nasm       INCORRECT
+	tab3.pre-nasm       INCORRECT
+	tab4.pre-nasm       INCORRECT
+	tantque1.pre-nasm   INCORRECT
+	tantque2.pre-nasm   INCORRECT
+	varglob1.pre-nasm   INCORRECT
+	varglob2.pre-nasm   INCORRECT
+	varglob3.pre-nasm   INCORRECT
+	varglob4.pre-nasm   INCORRECT
+	varloc1.pre-nasm    INCORRECT
+	varloc2.pre-nasm    INCORRECT
+	varloc3.pre-nasm    INCORRECT
+	varloc4.pre-nasm    INCORRECT
+	affect3.pre-nasm         NON-EXISTANT
+	appel-param1.pre-nasm    NON-EXISTANT
+	appel-param2.pre-nasm    NON-EXISTANT
+	appel-param3.pre-nasm    NON-EXISTANT
+	appel-retour1.pre-nasm   NON-EXISTANT
+	appel1.pre-nasm          NON-EXISTANT
+	appel2.pre-nasm          NON-EXISTANT
+	appel3.pre-nasm          NON-EXISTANT
+	fibo.pre-nasm            NON-EXISTANT
+	rec1.pre-nasm            NON-EXISTANT
+	varloc5.pre-nasm         NON-EXISTANT
+Évaluation de Execution du pre-nasm :
+0/84 correct (  0.00%)
+	add1.pre-nasmout       INCORRECT
+	add2.pre-nasmout       INCORRECT
+	affect1.pre-nasmout    INCORRECT
+	affect2.pre-nasmout    INCORRECT
+	and1.pre-nasmout       INCORRECT
+	and2.pre-nasmout       INCORRECT
+	and3.pre-nasmout       INCORRECT
+	and4.pre-nasmout       INCORRECT
+	and5.pre-nasmout       INCORRECT
+	div1.pre-nasmout       INCORRECT
+	div2.pre-nasmout       INCORRECT
+	div3.pre-nasmout       INCORRECT
+	div4.pre-nasmout       INCORRECT
+	ecrire1.pre-nasmout    INCORRECT
+	ecrire2.pre-nasmout    INCORRECT
+	egal1.pre-nasmout      INCORRECT
+	egal2.pre-nasmout      INCORRECT
+	egal3.pre-nasmout      INCORRECT
+	inf1.pre-nasmout       INCORRECT
+	inf2.pre-nasmout       INCORRECT
+	inf3.pre-nasmout       INCORRECT
+	inf4.pre-nasmout       INCORRECT
+	mult1.pre-nasmout      INCORRECT
+	mult2.pre-nasmout      INCORRECT
+	mult3.pre-nasmout      INCORRECT
+	not1.pre-nasmout       INCORRECT
+	not2.pre-nasmout       INCORRECT
+	not3.pre-nasmout       INCORRECT
+	or1.pre-nasmout        INCORRECT
+	or2.pre-nasmout        INCORRECT
+	or3.pre-nasmout        INCORRECT
+	or4.pre-nasmout        INCORRECT
+	or5.pre-nasmout        INCORRECT
+	parenth1.pre-nasmout   INCORRECT
+	parenth2.pre-nasmout   INCORRECT
+	prio23-1.pre-nasmout   INCORRECT
+	prio23-2.pre-nasmout   INCORRECT
+	prio23-3.pre-nasmout   INCORRECT
+	prio23-4.pre-nasmout   INCORRECT
+	prio34-1.pre-nasmout   INCORRECT
+	prio34-2.pre-nasmout   INCORRECT
+	prio34-3.pre-nasmout   INCORRECT
+	prio34-4.pre-nasmout   INCORRECT
+	prio45-1.pre-nasmout   INCORRECT
+	prio45-2.pre-nasmout   INCORRECT
+	prio45-3.pre-nasmout   INCORRECT
+	prio45-4.pre-nasmout   INCORRECT
+	prio56-1.pre-nasmout   INCORRECT
+	prio56-2.pre-nasmout   INCORRECT
+	prio67-1.pre-nasmout   INCORRECT
+	prio67-2.pre-nasmout   INCORRECT
+	si1.pre-nasmout        INCORRECT
+	si2.pre-nasmout        INCORRECT
+	si3.pre-nasmout        INCORRECT
+	si4.pre-nasmout        INCORRECT
+	si5.pre-nasmout        INCORRECT
+	sub1.pre-nasmout       INCORRECT
+	sub2.pre-nasmout       INCORRECT
+	sub3.pre-nasmout       INCORRECT
+	tab1.pre-nasmout       INCORRECT
+	tab2.pre-nasmout       INCORRECT
+	tab3.pre-nasmout       INCORRECT
+	tab4.pre-nasmout       INCORRECT
+	tantque1.pre-nasmout   INCORRECT
+	tantque2.pre-nasmout   INCORRECT
+	varglob1.pre-nasmout   INCORRECT
+	varglob2.pre-nasmout   INCORRECT
+	varglob3.pre-nasmout   INCORRECT
+	varglob4.pre-nasmout   INCORRECT
+	varloc1.pre-nasmout    INCORRECT
+	varloc2.pre-nasmout    INCORRECT
+	varloc3.pre-nasmout    INCORRECT
+	varloc4.pre-nasmout    INCORRECT
+	affect3.pre-nasmout         NON-EXISTANT
+	appel-param1.pre-nasmout    NON-EXISTANT
+	appel-param2.pre-nasmout    NON-EXISTANT
+	appel-param3.pre-nasmout    NON-EXISTANT
+	appel-retour1.pre-nasmout   NON-EXISTANT
+	appel1.pre-nasmout          NON-EXISTANT
+	appel2.pre-nasmout          NON-EXISTANT
+	appel3.pre-nasmout          NON-EXISTANT
+	fibo.pre-nasmout            NON-EXISTANT
+	rec1.pre-nasmout            NON-EXISTANT
+	varloc5.pre-nasmout         NON-EXISTANT
+Évaluation de Diff de nasm :
+0/84 correct (  0.00%)
+Évaluation de Execution du nasm :
+0/84 correct (  0.00%)
+Évaluation de Execution du binaire :
+0/84 correct (  0.00%)
+------------------------------EVALUATION ERRORS------------------------------
+ERROR evaluateSa for input fibo.l : 'java.lang.NullPointerException: Cannot invoke "ts.TsItemFct.getTable()" because "<local2>" is null
+	at sa.SaEval.visit(SaEval.java:239)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaAppel.accept(SaAppel.java:20)
+	at sa.SaEval.visit(SaEval.java:270)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaExpAppel.accept(SaExpAppel.java:13)
+	at sa.SaEval.visit(SaEval.java:279)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaExpAdd.accept(SaExpAdd.java:16)
+	at sa.SaEval.visit(SaEval.java:397)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstRetour.accept(SaInstRetour.java:12)
+	at sa.SaEval.visit(SaEval.java:146)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaLInst.accept(SaLInst.java:16)
+	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstBloc.accept(SaInstBloc.java:12)
+	at sa.SaEval.visit(SaEval.java:388)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstSi.accept(SaInstSi.java:19)
+	at sa.SaEval.visit(SaEval.java:146)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaLInst.accept(SaLInst.java:16)
+	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstBloc.accept(SaInstBloc.java:12)
+	at sa.SaEval.visit(SaEval.java:257)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaAppel.accept(SaAppel.java:20)
+	at sa.SaEval.visit(SaEval.java:270)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaExpAppel.accept(SaExpAppel.java:13)
+	at sa.SaEval.visit(SaEval.java:118)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstEcriture.accept(SaInstEcriture.java:13)
+	at sa.SaEval.visit(SaEval.java:146)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaLInst.accept(SaLInst.java:16)
+	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstBloc.accept(SaInstBloc.java:12)
+	at sa.SaEval.visit(SaEval.java:257)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaAppel.accept(SaAppel.java:20)
+	at sa.SaEval.<init>(SaEval.java:42)
+	at SaVM.main(SaVM.java:464)
+'
+
+ERROR evaluateSa for input rec1.l : 'java.lang.NullPointerException: Cannot invoke "ts.TsItemFct.getTable()" because "<local2>" is null
+	at sa.SaEval.visit(SaEval.java:239)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaAppel.accept(SaAppel.java:20)
+	at sa.SaEval.visit(SaEval.java:270)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaExpAppel.accept(SaExpAppel.java:13)
+	at sa.SaEval.visit(SaEval.java:280)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaExpAdd.accept(SaExpAdd.java:16)
+	at sa.SaEval.visit(SaEval.java:397)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstRetour.accept(SaInstRetour.java:12)
+	at sa.SaEval.visit(SaEval.java:146)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaLInst.accept(SaLInst.java:16)
+	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstBloc.accept(SaInstBloc.java:12)
+	at sa.SaEval.visit(SaEval.java:388)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstSi.accept(SaInstSi.java:19)
+	at sa.SaEval.visit(SaEval.java:146)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaLInst.accept(SaLInst.java:16)
+	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstBloc.accept(SaInstBloc.java:12)
+	at sa.SaEval.visit(SaEval.java:257)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaAppel.accept(SaAppel.java:20)
+	at sa.SaEval.visit(SaEval.java:270)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaExpAppel.accept(SaExpAppel.java:13)
+	at sa.SaEval.visit(SaEval.java:118)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstEcriture.accept(SaInstEcriture.java:13)
+	at sa.SaEval.visit(SaEval.java:146)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaLInst.accept(SaLInst.java:16)
+	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaInstBloc.accept(SaInstBloc.java:12)
+	at sa.SaEval.visit(SaEval.java:257)
+	at sa.SaEval.visit(SaEval.java:6)
+	at sa.SaAppel.accept(SaAppel.java:20)
+	at sa.SaEval.<init>(SaEval.java:42)
+	at SaVM.main(SaVM.java:464)
+'
+
+ERROR evaluatePreNasm for input add1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input add2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input mult1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input mult2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input mult3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio23-1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio23-2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio34-1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio34-2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio34-3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio34-4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio45-1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio45-2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio45-3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input prio45-4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input sub1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input sub2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input sub3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input tab2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input tab3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input tab4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input tantque1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input tantque2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input varglob2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input varglob4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input varloc2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input varloc4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at nasm.NasmParser.processLine(NasmParser.java:88)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
+	at nasm.NasmParser.parse(NasmParser.java:63)
+	at NasmVM.run(NasmVM.java:23)
+	at NasmVM.main(NasmVM.java:51)
+'

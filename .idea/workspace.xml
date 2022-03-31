@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="78b9b8b6-89e0-4625-8100-151a74568dae" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_03_2022_18_11_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_03_2022_18_11__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/result.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="v10" />
+      </map>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24yEwxW7ZKLt7QkkjTnveiT7Vub" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowDuplicates.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Téléchargements/compi" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="diff.external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/input" />
+      <recent name="$PROJECT_DIR$/test/input/test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Compiler">
+    <configuration name="Compiler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Compiler" />
+      <module name="2022-compilation-djebbari-henry" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaVM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SaVM" />
+      <module name="2022-compilation-djebbari-henry" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Compiler" />
+        <item itemvalue="Application.SaVM" />
+        <item itemvalue="Application.SaVM" />
+        <item itemvalue="Application.Compiler" />
+        <item itemvalue="Application.SaVM" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78b9b8b6-89e0-4625-8100-151a74568dae" name="Changes" comment="" />
+      <created>1644594670108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644594670108</updated>
+      <workItem from="1644594672004" duration="4907000" />
+      <workItem from="1644673716565" duration="1345000" />
+      <workItem from="1644696598908" duration="1062000" />
+      <workItem from="1646313590211" duration="4996000" />
+      <workItem from="1646318780819" duration="46000" />
+      <workItem from="1646481339751" duration="623000" />
+      <workItem from="1646579173372" duration="5904000" />
+      <workItem from="1646586960772" duration="1540000" />
+      <workItem from="1646588589370" duration="151000" />
+      <workItem from="1646677295180" duration="4363000" />
+      <workItem from="1646691996115" duration="1012000" />
+      <workItem from="1646746271219" duration="19723000" />
+      <workItem from="1646777654500" duration="2003000" />
+      <workItem from="1647012215766" duration="6031000" />
+      <workItem from="1647158458184" duration="7666000" />
+      <workItem from="1647186874028" duration="10630000" />
+      <workItem from="1647205119304" duration="2030000" />
+      <workItem from="1647276330527" duration="966000" />
+      <workItem from="1647349327009" duration="22000" />
+      <workItem from="1647372105252" duration="3585000" />
+      <workItem from="1647441232813" duration="3650000" />
+      <workItem from="1647529934542" duration="1804000" />
+      <workItem from="1647614900761" duration="6986000" />
+      <workItem from="1647628134050" duration="6417000" />
+      <workItem from="1647700207237" duration="32686000" />
+      <workItem from="1647740024554" duration="769000" />
+      <workItem from="1647740809898" duration="221000" />
+      <workItem from="1647741099636" duration="254000" />
+      <workItem from="1647786488132" duration="11042000" />
+      <workItem from="1647811816010" duration="3607000" />
+      <workItem from="1647877661805" duration="211000" />
+      <workItem from="1647878605352" duration="1441000" />
+      <workItem from="1647963223032" duration="12000" />
+      <workItem from="1648031465835" duration="3014000" />
+      <workItem from="1648053023385" duration="5352000" />
+      <workItem from="1648124648226" duration="49000" />
+      <workItem from="1648138917550" duration="17498000" />
+      <workItem from="1648314903698" duration="88000" />
+      <workItem from="1648315170189" duration="635000" />
+      <workItem from="1648384016088" duration="627000" />
+      <workItem from="1648498484346" duration="6508000" />
+      <workItem from="1648581437982" duration="3581000" />
+      <workItem from="1648585151509" duration="2250000" />
+      <workItem from="1648664604399" duration="791000" />
+      <workItem from="1648665746227" duration="11005000" />
+      <workItem from="1648679165947" duration="1590000" />
+      <workItem from="1648724740868" duration="40000" />
+      <workItem from="1648728663512" duration="1038000" />
+      <workItem from="1648734967706" duration="4716000" />
+      <workItem from="1648740099927" duration="815000" />
+      <workItem from="1648743061258" duration="1736000" />
+      <workItem from="1648745096967" duration="182000" />
+    </task>
+    <task id="LOCAL-00001" summary="grammaire + Sc2sa">
+      <created>1644673831006</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644673831006</updated>
+    </task>
+    <task id="LOCAL-00002" summary="grammaire + Sc2sa">
+      <created>1646313766330</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646313766330</updated>
+    </task>
+    <task id="LOCAL-00003" summary="sa2ts juste commencé">
+      <created>1646318551708</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646318551708</updated>
+    </task>
+    <task id="LOCAL-00004" summary="avancement Sa2ts">
+      <created>1646586364514</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646586364514</updated>
+    </task>
+    <task id="LOCAL-00005" summary="avancement Sa2ts">
+      <created>1646586545355</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646586545355</updated>
+    </task>
+    <task id="LOCAL-00006" summary="avancement Sa2ts">
+      <created>1646588309433</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646588309433</updated>
+    </task>
+    <task id="LOCAL-00007" summary="sa2ts finie problèmes à régler">
+      <created>1646773242644</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646773242644</updated>
+    </task>
+    <task id="LOCAL-00008" summary="sa2ts finie problèmes à régler avec visit de SaAppel">
+      <created>1647174482862</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647174482862</updated>
+    </task>
+    <task id="LOCAL-00009" summary="sa2ts normalement finie">
+      <created>1647207394804</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647207394804</updated>
+    </task>
+    <task id="LOCAL-00010" summary="corrections au niveau de sa2ts :&#10;- utilisation d'une table afin de distinguer les cas où nous somme dans une variable locale ou dans les paramètres d'une fonctions&#10;&#10;- ajustements des méthodes par rapports aux fichiers ts et out donnés en référence &#10;&#10;- ts à 100 % &#10;&#10;- sa à corriger.">
+      <created>1647739795523</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647739795523</updated>
+    </task>
+    <task id="LOCAL-00011" summary="pr pull">
+      <created>1647740066603</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647740066603</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fichiers .l du input qui avaient disparu à cause d'une mauvaise manip avec GIT, j'ai du les ajouter à nouveau manuellement.">
+      <created>1647741260969</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1647741260969</updated>
+    </task>
+    <task id="LOCAL-00013" summary="corrections au niveau de sc2sa et de sa2ts">
+      <created>1647814180870</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1647814180870</updated>
+    </task>
+    <task id="LOCAL-00014" summary="avancement sa2C3a">
+      <created>1648115522121</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1648115522121</updated>
+    </task>
+    <task id="LOCAL-00015" summary="commit qui remarchent mais push qui ne marchent toujours pas">
+      <created>1648586774920</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1648586774920</updated>
+    </task>
+    <task id="LOCAL-00016" summary="rendu final">
+      <created>1648743453913</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1648743453913</updated>
+    </task>
+    <task id="LOCAL-00017" summary="rendu final">
+      <created>1648744625500</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1648744625500</updated>
+    </task>
+    <task id="LOCAL-00018" summary="rendu final">
+      <created>1648744890919</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1648744890919</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="grammaire + Sc2sa" />
+    <MESSAGE value="sa2ts juste commencé" />
+    <MESSAGE value="avancement Sa2ts" />
+    <MESSAGE value="sa2ts finie problèmes à régler" />
+    <MESSAGE value="sa2ts finie problèmes à régler avec visit de SaAppel" />
+    <MESSAGE value="sa2ts normalement finie" />
+    <MESSAGE value="corrections au niveau de sa2ts :&#10;- utilisation d'une table afin de distinguer les cas où nous somme dans une variable locale ou dans les paramètres d'une fonctions&#10;&#10;- ajustements des méthodes par rapports aux fichiers ts et out donnés en référence &#10;&#10;- ts à 100 % &#10;&#10;- sa à corriger." />
+    <MESSAGE value="pr pull" />
+    <MESSAGE value="fichiers .l du input qui avaient disparu à cause d'une mauvaise manip avec GIT, j'ai du les ajouter à nouveau manuellement." />
+    <MESSAGE value="corrections au niveau de sc2sa et de sa2ts" />
+    <MESSAGE value="avancement sa2C3a" />
+    <MESSAGE value="commit qui remarchent mais push qui ne marchent toujours pas" />
+    <MESSAGE value="rendu final" />
+    <option name="LAST_COMMIT_MESSAGE" value="rendu final" />
+  </component>
+</project>
