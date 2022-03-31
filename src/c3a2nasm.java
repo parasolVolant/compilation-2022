@@ -1,8 +1,8 @@
-package nasm;
+import nasm.*;
 import ts.*;
 import c3a.*;
 
-public class C3a2nasm implements C3aVisitor <NasmOperand> {
+public class c3a2nasm implements C3aVisitor <NasmOperand> {
     private C3a c3a;
     private Nasm nasm;
     private Ts tableGlobale;
@@ -11,7 +11,7 @@ public class C3a2nasm implements C3aVisitor <NasmOperand> {
     private NasmRegister ebp;
 
 
-    public C3a2nasm(C3a c3a, Ts tableGlobale){
+    public c3a2nasm(C3a c3a, Ts tableGlobale){
 	this.c3a = c3a;
 	nasm = new Nasm(tableGlobale);
 	nasm.setTempCounter(c3a.getTempCounter());
