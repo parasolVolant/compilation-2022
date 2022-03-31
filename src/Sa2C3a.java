@@ -1,4 +1,4 @@
-package c3a;
+import c3a.*;
 import ts.*;
 import sa.*;
 
@@ -6,18 +6,12 @@ import sa.*;
 public class Sa2C3a extends SaDepthFirstVisitor <C3aOperand> {
     private C3a c3a;
     int indentation;
-
-    public C3a getC3a() {
-        return this.c3a;
-    }
-
+    public C3a getC3a(){return this.c3a;}
     Ts tableGlobale;
 
-
-    public Sa2C3a(SaNode root, Ts tableGlobale) {
+    public Sa2C3a(SaNode root, Ts tableGlobale){
         c3a = new C3a();
         C3aTemp result = c3a.newTemp();
-        this.tableGlobale = tableGlobale;
         C3aFunction fct = new C3aFunction(tableGlobale.getFct("main"));
         c3a.ajouteInst(new C3aInstCall(fct, result, ""));
         c3a.ajouteInst(new C3aInstStop(result, ""));
@@ -25,38 +19,42 @@ public class Sa2C3a extends SaDepthFirstVisitor <C3aOperand> {
         root.accept(this);
     }
 
-    public void defaultIn(SaNode node) {
-        for (int i = 0; i < indentation; i++) {
-            System.out.print(" ");
-        }
+    public void defaultIn(SaNode node)
+    {
+        for(int i = 0; i < indentation; i++){System.out.print(" ");}
         indentation++;
         System.out.println("<" + node.getClass().getSimpleName() + ">");
     }
 
-    public void defaultOut(SaNode node) {
+    public void defaultOut(SaNode node)
+    {
         indentation--;
-        for (int i = 0; i < indentation; i++) {
-            System.out.print(" ");
-        }
+        for(int i = 0; i < indentation; i++){System.out.print(" ");}
         System.out.println("</" + node.getClass().getSimpleName() + ">");
     }
+
 
     public C3aOperand visit(SaProg node) {
         node.getFonctions().accept(this);
         return null;
     }
+
+
+
     @Override
     public C3aOperand visit(SaExp node) {
         node.accept(this);
         return null;
     }
 
-    @Override
+
+   @Override
     public C3aOperand visit(SaExpAppel node) {
         defaultIn(node);
-        C3aOperand appel = node.getVal().accept(this);
+        C3aOperand call = node.getVal().accept(this);
         defaultOut(node);
-        return appel;
+        return call;
+
     }
 
     @Override
@@ -99,20 +97,17 @@ public class Sa2C3a extends SaDepthFirstVisitor <C3aOperand> {
     }
 
 
-    @Override
+   @Override
     public C3aOperand visit(SaAppel node) {
 
-        SaLExp args = node.getArguments();
-        SaExp arg;
+        defaultIn(node);
+        node.getArguments().accept(this);
+        C3aFunction function = new C3aFunction(this.tableGlobale.getFct(node.getNom()));
         C3aOperand result = c3a.newTemp();
-        int i;
-        while (args != null) {
-            arg = args.getTete();
-            args = args.getQueue();
-            c3a.ajouteInst(new C3aInstParam(arg.accept(this), ""));
-        }
-        c3a.ajouteInst(new C3aInstCall(new C3aFunction(node.tsItem), result, ""));
-        return result;
+        C3aInstCall  call = new C3aInstCall(function,result,"");
+        c3a.ajouteInst(call);
+       defaultOut(node);
+       return result;
     }
 
 

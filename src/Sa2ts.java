@@ -1,6 +1,6 @@
-package ts;
-
 import sa.*;
+import ts.Ts;
+import ts.TsItemVar;
 
 public class Sa2ts extends SaDepthFirstVisitor<Void> {
 
@@ -10,9 +10,6 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     private Ts tableGlobale;
     private Ts tableLocaleCourante;
     private Context context;
-
-
-
 
 
     public Sa2ts(SaNode root) {
