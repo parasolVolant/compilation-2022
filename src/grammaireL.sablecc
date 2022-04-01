@@ -14,6 +14,8 @@ commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
 virgule = ',';
 divise = '/';
 point_virgule = ';';
+interrogation = '?';
+deux_points = ':';
 fois = '*';
 moins = '-';
 parenthese_ouvrante = '(';
@@ -28,6 +30,7 @@ et = '&';
 ou = '|';
 non = '!';
 plus = '+';
+incremente = '+=';
 si = 'si';
 alors = 'alors';
 sinon = 'sinon';
@@ -84,7 +87,9 @@ instr =
 {instrappel } instrappel |
 {instrretour } instrretour |
 {instrecriture } instrecriture |
+{instrOptTer } instrOptTer |
 {instrvide} instrvide ;
+
 
 instraffect = var egal exp point_virgule ;
 
@@ -100,6 +105,7 @@ instrsi =
 {avecsinon} si exp alors instrbloc instrsinon |
 {sanssinon} si exp alors instrbloc ;
 
+
 instrsinon = sinon instrbloc ;
 
 instrtantque = tantque exp faire instrbloc ;
@@ -110,7 +116,11 @@ instrretour = retour exp point_virgule ;
 
 instrecriture = ecrire parenthese_ouvrante exp parenthese_fermante point_virgule ;
 
+instrOptTer = crochet_ouvrant exp1 crochet_fermant interrogation exp2 deux_points exp3 point_virgule ;
+
 instrvide = point_virgule ;
+
+instrOptTer =
 
 //################################################################################
 // exp (booléennes, arithmétiques) avec implémentation des priorités.
@@ -145,6 +155,7 @@ exp3 =
 exp4 =
 {fois} exp4 fois exp5 |
 {divise} exp4 divise exp5 |
+{incremente} exp4 incremente exp5 |
 {exp5} exp5 ;
 
 exp5 =
