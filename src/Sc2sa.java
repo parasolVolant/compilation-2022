@@ -135,6 +135,10 @@ public class Sc2sa extends DepthFirstAdapter {
         this.returnValue = new SaDecFonc(name, list, null, bloc);
     }
 
+
+
+
+
     @Override
     public void caseASansparamListeparam(ASansparamListeparam node) {
         this.returnValue = null;
@@ -149,6 +153,8 @@ public class Sc2sa extends DepthFirstAdapter {
     public void caseAInstraffectInstr(AInstraffectInstr node) {
         node.getInstraffect().apply(this);
     }
+
+
 
     @Override
     public void caseAInstrblocInstr(AInstrblocInstr node) {
@@ -506,6 +512,8 @@ public class Sc2sa extends DepthFirstAdapter {
         list = (SaLExp) this.returnValue;
         this.returnValue = new SaAppel(name, list);
     }
+
+
 
 
 }

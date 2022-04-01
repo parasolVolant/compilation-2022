@@ -26,11 +26,11 @@ accolade_ouvrante = '{';
 accolade_fermante = '}';
 egal = '=';
 inferieur = '<';
+incremente = '+=';
 et = '&';
 ou = '|';
 non = '!';
 plus = '+';
-incremente = '+=';
 si = 'si';
 alors = 'alors';
 sinon = 'sinon';
@@ -81,17 +81,19 @@ listeparam =
 
 instr =
 {instraffect} instraffect |
+{instrincremente } instrincremente |
 {instrbloc } instrbloc |
 {instrsi } instrsi |
 {instrtantque } instrtantque |
 {instrappel } instrappel |
 {instrretour } instrretour |
 {instrecriture } instrecriture |
-{instrOptTer } instrOptTer |
 {instrvide} instrvide ;
 
 
 instraffect = var egal exp point_virgule ;
+
+instrincremente = var incremente exp point_virgule ;
 
 instrbloc = accolade_ouvrante listeinst accolade_fermante ;
 
@@ -116,11 +118,8 @@ instrretour = retour exp point_virgule ;
 
 instrecriture = ecrire parenthese_ouvrante exp parenthese_fermante point_virgule ;
 
-instrOptTer = crochet_ouvrant exp1 crochet_fermant interrogation exp2 deux_points exp3 point_virgule ;
-
 instrvide = point_virgule ;
 
-instrOptTer =
 
 //################################################################################
 // exp (booléennes, arithmétiques) avec implémentation des priorités.
@@ -150,12 +149,12 @@ exp2 =
 exp3 =
 {plus} exp3 plus exp4 |
 {moins} exp3 moins exp4 |
+{incremente} exp3 incremente exp4 |
 {exp4} exp4 ;
 
 exp4 =
 {fois} exp4 fois exp5 |
 {divise} exp4 divise exp5 |
-{incremente} exp4 incremente exp5 |
 {exp5} exp5 ;
 
 exp5 =

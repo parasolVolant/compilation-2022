@@ -1,12 +1,9 @@
-<<<<<<<< HEAD:src/c3a2nasm.java
+
 import nasm.*;
-========
-package nasm;
->>>>>>>> 905438c (rendu final):src/C3a2nasm.java
 import ts.*;
 import c3a.*;
 
-public class c3a2nasm implements C3aVisitor <NasmOperand> {
+public class C3a2nasm implements C3aVisitor <NasmOperand> {
     private C3a c3a;
     private Nasm nasm;
     private Ts tableGlobale;
@@ -15,11 +12,7 @@ public class c3a2nasm implements C3aVisitor <NasmOperand> {
     private NasmRegister ebp;
 
 
-<<<<<<<< HEAD:src/c3a2nasm.java
-    public c3a2nasm(C3a c3a, Ts tableGlobale){
-========
     public C3a2nasm(C3a c3a, Ts tableGlobale){
->>>>>>>> 905438c (rendu final):src/C3a2nasm.java
 	this.c3a = c3a;
 	nasm = new Nasm(tableGlobale);
 	nasm.setTempCounter(c3a.getTempCounter());

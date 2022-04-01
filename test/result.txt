@@ -608,37 +608,37 @@
 0/84 correct (  0.00%)
 ------------------------------EVALUATION ERRORS------------------------------
 ERROR evaluateSa for input fibo.l : 'java.lang.NullPointerException: Cannot invoke "ts.TsItemFct.getTable()" because "<local2>" is null
-	at sa.SaEval.visit(SaEval.java:239)
+	at sa.SaEval.visit(SaEval.java:272)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaAppel.accept(SaAppel.java:20)
-	at sa.SaEval.visit(SaEval.java:270)
+	at sa.SaEval.visit(SaEval.java:303)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaExpAppel.accept(SaExpAppel.java:13)
-	at sa.SaEval.visit(SaEval.java:279)
+	at sa.SaEval.visit(SaEval.java:313)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaExpAdd.accept(SaExpAdd.java:16)
-	at sa.SaEval.visit(SaEval.java:397)
+	at sa.SaEval.visit(SaEval.java:449)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstRetour.accept(SaInstRetour.java:12)
 	at sa.SaEval.visit(SaEval.java:146)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaLInst.accept(SaLInst.java:16)
-	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:428)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstBloc.accept(SaInstBloc.java:12)
-	at sa.SaEval.visit(SaEval.java:388)
+	at sa.SaEval.visit(SaEval.java:440)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstSi.accept(SaInstSi.java:19)
 	at sa.SaEval.visit(SaEval.java:146)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaLInst.accept(SaLInst.java:16)
-	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:428)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstBloc.accept(SaInstBloc.java:12)
-	at sa.SaEval.visit(SaEval.java:257)
+	at sa.SaEval.visit(SaEval.java:290)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaAppel.accept(SaAppel.java:20)
-	at sa.SaEval.visit(SaEval.java:270)
+	at sa.SaEval.visit(SaEval.java:303)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaExpAppel.accept(SaExpAppel.java:13)
 	at sa.SaEval.visit(SaEval.java:118)
@@ -647,48 +647,48 @@ ERROR evaluateSa for input fibo.l : 'java.lang.NullPointerException: Cannot invo
 	at sa.SaEval.visit(SaEval.java:146)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaLInst.accept(SaLInst.java:16)
-	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:428)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstBloc.accept(SaInstBloc.java:12)
-	at sa.SaEval.visit(SaEval.java:257)
+	at sa.SaEval.visit(SaEval.java:290)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaAppel.accept(SaAppel.java:20)
 	at sa.SaEval.<init>(SaEval.java:42)
-	at SaVM.main(SaVM.java:464)
+	at SaVM.main(SaVM.java:498)
 '
 
 ERROR evaluateSa for input rec1.l : 'java.lang.NullPointerException: Cannot invoke "ts.TsItemFct.getTable()" because "<local2>" is null
-	at sa.SaEval.visit(SaEval.java:239)
+	at sa.SaEval.visit(SaEval.java:272)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaAppel.accept(SaAppel.java:20)
-	at sa.SaEval.visit(SaEval.java:270)
+	at sa.SaEval.visit(SaEval.java:303)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaExpAppel.accept(SaExpAppel.java:13)
-	at sa.SaEval.visit(SaEval.java:280)
+	at sa.SaEval.visit(SaEval.java:314)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaExpAdd.accept(SaExpAdd.java:16)
-	at sa.SaEval.visit(SaEval.java:397)
+	at sa.SaEval.visit(SaEval.java:449)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstRetour.accept(SaInstRetour.java:12)
 	at sa.SaEval.visit(SaEval.java:146)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaLInst.accept(SaLInst.java:16)
-	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:428)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstBloc.accept(SaInstBloc.java:12)
-	at sa.SaEval.visit(SaEval.java:388)
+	at sa.SaEval.visit(SaEval.java:440)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstSi.accept(SaInstSi.java:19)
 	at sa.SaEval.visit(SaEval.java:146)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaLInst.accept(SaLInst.java:16)
-	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:428)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstBloc.accept(SaInstBloc.java:12)
-	at sa.SaEval.visit(SaEval.java:257)
+	at sa.SaEval.visit(SaEval.java:290)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaAppel.accept(SaAppel.java:20)
-	at sa.SaEval.visit(SaEval.java:270)
+	at sa.SaEval.visit(SaEval.java:303)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaExpAppel.accept(SaExpAppel.java:13)
 	at sa.SaEval.visit(SaEval.java:118)
@@ -697,255 +697,255 @@ ERROR evaluateSa for input rec1.l : 'java.lang.NullPointerException: Cannot invo
 	at sa.SaEval.visit(SaEval.java:146)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaLInst.accept(SaLInst.java:16)
-	at sa.SaEval.visit(SaEval.java:376)
+	at sa.SaEval.visit(SaEval.java:428)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaInstBloc.accept(SaInstBloc.java:12)
-	at sa.SaEval.visit(SaEval.java:257)
+	at sa.SaEval.visit(SaEval.java:290)
 	at sa.SaEval.visit(SaEval.java:6)
 	at sa.SaAppel.accept(SaAppel.java:20)
 	at sa.SaEval.<init>(SaEval.java:42)
-	at SaVM.main(SaVM.java:464)
+	at SaVM.main(SaVM.java:498)
 '
 
 ERROR evaluatePreNasm for input add1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input add2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input mult1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input mult2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input mult3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio23-1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio23-2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio34-1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio34-2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio34-3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio34-4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio45-1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio45-2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio45-3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input prio45-4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input sub1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input sub2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input sub3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input tab2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input tab3.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input tab4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input tantque1.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input tantque2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input varglob2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input varglob4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input varloc2.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
 
 ERROR evaluatePreNasm for input varloc4.l : 'Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at nasm.NasmParser.processLine(NasmParser.java:88)
-	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:117)
+	at java.base/java.nio.file.FileChannelLinesSpliterator.forEachRemaining(FileChannelLinesSpliterator.java:133)
 	at java.base/java.util.stream.ReferencePipeline$Head.forEachOrdered(ReferencePipeline.java:772)
 	at nasm.NasmParser.parse(NasmParser.java:63)
 	at NasmVM.run(NasmVM.java:23)
-	at NasmVM.main(NasmVM.java:51)
+	at NasmVM.main(NasmVM.java:52)
 '
