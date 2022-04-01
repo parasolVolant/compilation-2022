@@ -182,22 +182,23 @@ public class SaEval extends SaDepthFirstVisitor <Integer> {
 			setVarGlobIndicee(lhsIndicee.tsItem, indice, val);
 
 		}
-	else{// lhs est une variable simple, trois cas possibles : une variable locale, une variable globale ou un argument
-	    SaVarSimple lhsSimple = (SaVarSimple) node.getLhs();
-	    if(lhsSimple.tsItem.portee == this.tableGlobale){ // variable globale
-		setVarGlob(lhsSimple.tsItem, val + getVarGlob(lhsSimple.tsItem));
-		//		varGlob[lhsSimple.tsItem.adresse] = val;
-	    }
-	    else if(lhsSimple.tsItem.isParam){ // parametre
-		curEnv.setArg(lhsSimple.tsItem.adresse, val);
-	    }
-	    else { // variable locale
-		curEnv.setVar(lhsSimple.tsItem.adresse, val);
-	    }
+
+		else{// lhs est une variable simple, trois cas possibles : une variable locale, une variable globale ou un argument
+			SaVarSimple lhsSimple = (SaVarSimple) node.getLhs();
+			if(lhsSimple.tsItem.portee == this.tableGlobale){ // variable globale
+				setVarGlob(lhsSimple.tsItem, val);
+				//		varGlob[lhsSimple.tsItem.adresse] = val;
+			}
+			else if(lhsSimple.tsItem.isParam){ // parametre
+				curEnv.setArg(lhsSimple.tsItem.adresse, val);
+			}
+			else { // variable locale
+				curEnv.setVar(lhsSimple.tsItem.adresse, val);
+			}
+		}
+		defaultOut(node);
+		return 1;
 	}
-	defaultOut(node);
-	return 1;
-    }
     
     public Integer visit(SaInstIncremente node)
     {
@@ -305,6 +306,17 @@ public class SaEval extends SaDepthFirstVisitor <Integer> {
 	}
 
 
+	// EXP -> add EXP EXP
+	public Integer visit(SaExpAdd node)
+	{
+		defaultIn(node);
+		int op1 = node.getOp1().accept(this);
+		int op2 = node.getOp2().accept(this);
+		defaultOut(node);
+
+		return op1 + op2;
+	}
+
 	// EXP -> sub EXP EXP
 	public Integer visit(SaExpSub node)
 	{
@@ -312,17 +324,8 @@ public class SaEval extends SaDepthFirstVisitor <Integer> {
 		int op1 = node.getOp1().accept(this);
 		int op2 = node.getOp2().accept(this);
 		defaultOut(node);
-		return op1 - op2;
-	}
 
-	// EXP -> mult EXP EXP
-	public Integer visit(SaExpMult node)
-	{
-		defaultIn(node);
-		int op1 = node.getOp1().accept(this);
-		int op2 = node.getOp2().accept(this);
-		defaultOut(node);
-		return op1 * op2;
+		return op1 - op2;
 	}
     
     public Integer visit(SaExpOptTer node)
@@ -339,16 +342,17 @@ public class SaEval extends SaDepthFirstVisitor <Integer> {
     }
 
 
-    
-    // EXP -> add EXP EXP
-    public Integer visit(SaExpAdd node)
-    {
-	defaultIn(node);
-	int op1 = node.getOp1().accept(this);
-	int op2 = node.getOp2().accept(this);
-	defaultOut(node);
-	return op1 + op2;
-    }
+
+	// EXP -> mult EXP EXP
+	public Integer visit(SaExpMult node)
+	{
+		defaultIn(node);
+		int op1 = node.getOp1().accept(this);
+		int op2 = node.getOp2().accept(this);
+		defaultOut(node);
+
+		return op1 * op2;
+	}
 
 	// EXP -> div EXP EXP
 	public Integer visit(SaExpDiv node)
