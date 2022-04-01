@@ -50,7 +50,7 @@ public class NasmVM {
 	    var vm = new NasmVM(nasmFileName, stackSize, verboseLevel);
 	    vm.run();
 	}catch(IOException e){
-            e.printStackTrace();
+            e.printStackTrace();g
         }
     }
 }
