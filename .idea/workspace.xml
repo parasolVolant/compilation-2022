@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="78b9b8b6-89e0-4625-8100-151a74568dae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NasmVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NasmVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sa2C3a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sa2C3a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sa/SaEval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sa/SaEval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/c3a2nasm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C3a2nasm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nasm/C3a2nasm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nasm/C3a2nasm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
