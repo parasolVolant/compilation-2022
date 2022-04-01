@@ -17,7 +17,12 @@
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test/result.txt" afterDir="false" />
+<<<<<<< HEAD
 >>>>>>> c881a00 (merge)
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+>>>>>>> aa3d590 (merge)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +43,13 @@
       </map>
     </option>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
 =======
 >>>>>>> c881a00 (merge)
+=======
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+>>>>>>> aa3d590 (merge)
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -314,9 +323,13 @@
       </map>
     </option>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="oldMeFiltersMigrated" value="true" />
 =======
 >>>>>>> c881a00 (merge)
+=======
+    <option name="oldMeFiltersMigrated" value="true" />
+>>>>>>> aa3d590 (merge)
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
